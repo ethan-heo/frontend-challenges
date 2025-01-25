@@ -1,12 +1,8 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "showcase:build": {
-      "outputs": ["dist/**"],
-      "cache": false
-    },
     "build": {
-      "dependsOn": ["showcase:build"],
+      "dependsOn": ["^build"],
       "outputs": ["dist/**"],
       "cache": false
     },

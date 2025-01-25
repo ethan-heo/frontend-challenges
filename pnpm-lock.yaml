@@ -57,6 +57,9 @@ importers:
       vite:
         specifier: ^6.0.5
         version: 6.0.11(@types/node@22.10.10)
+      vite-plugin-move-dist-files:
+        specifier: workspace:*
+        version: link:../../packages/vite-plugin-move-dist-files
 
   apps/test:
     dependencies:
@@ -91,6 +94,9 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.14.0
+      showcase:
+        specifier: workspace:*
+        version: link:../showcase
       typescript:
         specifier: ~5.6.2
         version: 5.6.3
@@ -100,6 +106,12 @@ importers:
       vite:
         specifier: ^6.0.5
         version: 6.0.11(@types/node@22.10.10)
+
+  packages/vite-plugin-move-dist-files:
+    devDependencies:
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
 
 packages:
 

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "Node16",
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "outDir": "dist",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "declaration": true
+  },
+  "include": ["src/index.ts"]
+}

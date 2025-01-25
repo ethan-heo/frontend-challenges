@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "rm -r ./docs && turbo run build",
+    "build": "rm -f -r ./docs && turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint"
   },
