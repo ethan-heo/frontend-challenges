@@ -2,11 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "showcase:build": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "build": {
       "dependsOn": ["showcase:build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "check-types": {
       "dependsOn": ["^check-types"]
