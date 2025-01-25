@@ -1,7 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
+    "showcase:build": {
+      "outputs": ["dist/**"]
+    },
     "build": {
+      "dependsOn": ["showcase:build"],
       "outputs": ["dist/**"]
     },
     "check-types": {
