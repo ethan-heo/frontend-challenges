@@ -15,7 +15,7 @@ export default defineConfig({
         const sourceDir = path.resolve(__dirname, "dist");
         const targetDir = path.resolve(
           __dirname,
-          `../showcase/dist/projects/${pkg.name}`
+          `../../docs/projects/${pkg.name}`
         ); // 이동할 경로
 
         // 디렉토리 생성
