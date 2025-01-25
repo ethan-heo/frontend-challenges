@@ -6,7 +6,7 @@ import fs from "node:fs";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: `/projects/${pkg.name}/`,
+  base: `/frontend-challenges/projects/${pkg.name}/`,
   plugins: [
     react({}),
     {
