@@ -1,0 +1,8 @@
+body {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-normal);
+  font-family: "Oswald", serif;
+  color: var(--color-background-on-default);
+  background-color: var(--color-background-default);
+  min-height: 100vh;
+}

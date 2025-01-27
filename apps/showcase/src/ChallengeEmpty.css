@@ -1,0 +1,9 @@
+.challenge-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-medium-primary-default);
+  border-radius: 8px;
+  font-size: var(--font-size-large);
+  height: 300px;
+}

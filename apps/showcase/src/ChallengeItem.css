@@ -1,0 +1,38 @@
+.challenge-item__thumbnail {
+  position: relative;
+  padding-bottom: 56.25%;
+  margin-bottom: 8px;
+  border: var(--border-medium-secondary-default);
+  border-radius: 8px;
+}
+
+.challenge-item__thumbnail iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.challenge-item__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.challenge-item__skills li {
+  /* background-color: var(--border-thin-secondary-default); */
+  border: var(--border-medium-primary-default);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.challenge figcaption {
+  margin-bottom: 4px;
+}
+
+.challenge__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

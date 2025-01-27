@@ -1,0 +1,23 @@
+.challenge {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.challenge h1 {
+  font-size: var(--font-size-extra-large);
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.challenge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.challenge-list > li {
+  flex: 1 1 calc(50% - 16px); /* 기본 너비 33%, 간격 제외 */
+  min-width: 320px;
+}
