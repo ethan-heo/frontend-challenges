@@ -3,37 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/favicon-32x32.png" type="image/x-icon" />
     <title>Conference ticket generator</title>
     <meta name="description" content="Generate conference tickets" />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/styles/ticket/common.css" />
+    <link
+      rel="stylesheet"
+      href="./src/styles/ticket/mobile.css"
+      media="screen and (max-width: 480px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/ticket/desktop.css"
+      media="screen and (min-width: 481px)"
+    />
   </head>
   <body>
     <header>
       <h1>
-        <img src="" alt="coding conf" />
-        Codding Conf
+        <img src="./src/assets/images/logo-full.svg" alt="coding conf" />
       </h1>
     </header>
     <main>
-      <p>Congrats, <span>Name</span>! Your ticket is ready.</p>
-      <p>
-        We've emailed your ticket to <span>Email</span> and will send updates in
+      <p class="desc__main">
+        Congrats, <span class="desc__main--highlight">Name</span>! Your ticket
+        is ready.
+      </p>
+      <p class="desc__sub">
+        We've emailed your ticket to
+        <span class="desc__sub--highlight">Email</span> and will send updates in
         the run up to the event.
       </p>
-      <div>
-        <div>
-          <img src="" alt="Coding conf" />
-          <time>Jan 31, 2025 / Austin, TX</time>
+      <div class="ticket">
+        <div class="ticket__conference">
+          <img src="./src/assets/images/logo-mark.svg" alt="Coding conf" />
+          <div class="ticket__conference__info">
+            <h2>Coding Conf</h2>
+            <time datetime="2025-01-31">Jan 31, 2025 / Austin, TX</time>
+          </div>
         </div>
-        <div>
-          <img src="" alt="Avatar" />
-          <div>
-            <span>Name</span>
-            <div>
-              <img src="" alt="contact email" />
-              <span>Email</span>
+        <div class="ticket__user">
+          <img
+            class="ticket__user__avatar"
+            src="./src/assets/images/image-avatar.jpg"
+            alt="Avatar"
+          />
+          <div class="ticket__user__info">
+            <span class="ticket__user__info__name">Name</span>
+            <div class="ticket__user__info__contact">
+              <img
+                class="ticket__user__info__contact__logo"
+                src="./src/assets/images/icon-github.svg"
+                alt="contact email"
+              />
+              <span class="ticket__user__info__contact__email">Email</span>
             </div>
           </div>
         </div>
+        <div class="ticket__color">#01609</div>
       </div>
     </main>
   </body>

@@ -1,0 +1,90 @@
+body {
+  min-height: 100vh;
+  font-size: var(--font-size-label);
+  color: var(--color-neutral-0);
+  background-image: url(../../assets/images/pattern-squiggly-line-bottom-desktop.svg),
+    url(../../assets/images/pattern-squiggly-line-top.svg),
+    url(../../assets/images/pattern-lines.svg),
+    url(../../assets/images/pattern-circle.svg),
+    url(../../assets/images/background-mobile.png);
+  background-repeat: no-repeat;
+  background-position: left bottom, 100% 5%, left top, 110% 75%, center;
+  background-size: 60%, 25% 15%, cover, 200px, cover;
+}
+
+header {
+  text-align: center;
+}
+
+.desc__main {
+  text-align: center;
+}
+
+.desc__sub {
+  color: var(--color-neutral-300);
+  text-align: center;
+}
+
+.desc__main--highlight {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-text-gradient-orange),
+    var(--color-text-gradient-white)
+  );
+  color: transparent;
+  background-clip: text;
+}
+
+.desc__sub--highlight {
+  color: var(--color-orange-500);
+}
+
+.ticket {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../../assets/images/pattern-ticket.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+  border-radius: 8px;
+}
+
+.ticket__conference {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ticket__conference__info time {
+  color: var(--color-neutral-500);
+}
+
+.ticket__user {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ticket__user__avatar {
+  border-radius: 8px;
+}
+
+.ticket__user__info__name {
+  display: block;
+}
+
+.ticket__user__info__contact {
+  display: flex;
+  align-items: center;
+}
+
+.ticket__user__info__contact__email {
+  color: var(--color-neutral-500);
+}
+
+.ticket__color {
+  position: absolute;
+  top: 50%;
+  color: var(--color-neutral-500);
+}
