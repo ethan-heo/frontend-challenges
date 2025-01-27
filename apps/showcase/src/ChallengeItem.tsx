@@ -2,15 +2,14 @@ import { ChallengeInfo } from "./models/challenge.model";
 import "./ChallengeItem.css";
 
 const ChallengeItem = ({
-  link,
   name,
   skills,
   description,
   sourceLink,
   source,
 }: ChallengeInfo) => {
-  const baseURL = "/frontend-challenges";
-  const _link = `${baseURL}${link}`;
+  const baseURL = "/frontend-challenges/projects";
+  const _link = `${baseURL}/${name}`;
 
   return (
     <figure className="challenge">

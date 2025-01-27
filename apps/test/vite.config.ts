@@ -6,7 +6,7 @@ import fs from "node:fs";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: `/frontend-challenges/projects/${pkg.name}/`,
+  base: `/frontend-challenges/projects/${pkg.challenge.name}/`,
   plugins: [
     react({}),
     {
@@ -15,7 +15,7 @@ export default defineConfig({
         const sourceDir = path.resolve(__dirname, "dist");
         const targetDir = path.resolve(
           __dirname,
-          `../../docs/projects/${pkg.name}`
+          `../../docs/projects/${pkg.challenge.name}`
         ); // 이동할 경로
 
         // 디렉토리 생성
