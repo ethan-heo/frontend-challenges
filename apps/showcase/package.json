@@ -2,12 +2,13 @@
   "name": "showcase",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "gen:challenge && tsc -b && vite build",
+    "build": "pnpm gen:challenge && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "gen:challenge": "node scripts/generateChallengeInfo.js"
+    "gen:challenge": "node scripts/generateChallengeInfo.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
