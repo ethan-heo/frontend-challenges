@@ -1,11 +1,11 @@
 import ChallengeItem from "./ChallengeItem";
-import { CHALLENGES_MOCK } from "./mocks/challenges.mock";
 import { ChallengeInfo } from "./models/challenge.model";
+import challengeData from "./assets/challenges.json";
 import "./Challenge.css";
 import ChallengeEmpty from "./ChallengeEmpty";
 
 const Challenge: React.FC = () => {
-  const challenges: ChallengeInfo[] = CHALLENGES_MOCK;
+  const challenges: ChallengeInfo[] = challengeData.infos;
 
   return (
     <section className="challenge">

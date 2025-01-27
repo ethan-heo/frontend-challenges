@@ -9,6 +9,17 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "challenge": {
+    "link": "/test/",
+    "name": "test",
+    "description": "This is a test challenge",
+    "skills": [
+      "react",
+      "typescript"
+    ],
+    "source": "source",
+    "sourceLink": "source link"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

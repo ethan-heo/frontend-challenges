@@ -9,10 +9,13 @@ const ChallengeItem = ({
   sourceLink,
   source,
 }: ChallengeInfo) => {
+  const baseURL = "/frontend-challenges";
+  const _link = `${baseURL}${link}`;
+
   return (
     <figure className="challenge">
       <div className="challenge-item__thumbnail">
-        <iframe loading="lazy" src={link} title={name} />
+        <iframe loading="lazy" src={_link} title={name} />
       </div>
       <ul className="challenge-item__skills">
         {skills.map((skill) => (
@@ -24,7 +27,7 @@ const ChallengeItem = ({
         <a href={sourceLink} target="_blank">
           #{source}
         </a>
-        <a href={link} target="_blank">
+        <a href={_link} target="_blank">
           Go to page
         </a>
       </div>
