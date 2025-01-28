@@ -8,20 +8,21 @@
     <meta name="description" content="Generate conference tickets" />
     <link
       rel="stylesheet"
-      href="/frontend-challenges/projects/conference-ticket-generator/assets/mobile-Bq-L2Ll8.css"
+      href="data:text/css;base64,LmhlYWRlciB7CiAgcGFkZGluZzogMzVweCAwIDQ1cHg7Cn0KCm1haW4gewogIGZvbnQtc2l6ZTogMnJlbTsKICBwYWRkaW5nOiAwIDIwcHg7Cn0KCi5kZXNjX19tYWluIHsKICBtYXJnaW4tYm90dG9tOiAyNHB4OwogIHBhZGRpbmc6IDAgMjBweDsKICBmb250LXNpemU6IDEuNnJlbTsKfQoKLmRlc2NfX3N1YiB7CiAgbWFyZ2luLWJvdHRvbTogMzZweDsKICBwYWRkaW5nOiAwIDIwcHg7CiAgZm9udC1zaXplOiAxLjRyZW07Cn0KCi5yZWdpc3Rlci1mb3JtIHsKICBtYXJnaW4tYm90dG9tOiA4MHB4OwogIGdhcDogMjRweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2xhYmVsIHsKICBtYXJnaW4tYm90dG9tOiAxNnB4OwogIGZvbnQtc2l6ZTogMS4ycmVtOwp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWQgewogIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgcGFkZGluZzogMjBweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19pY29uIHsKICB3aWR0aDogNDJweDsKICBoZWlnaHQ6IDQycHg7CiAgYm9yZGVyLXJhZGl1czogOHB4OwogIG1hcmdpbjogMCBhdXRvIDE0cHg7Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX3VwbG9hZF9faWNvbiBpbWcgewogIGJvcmRlci1yYWRpdXM6IDhweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19ndWlkZSB7CiAgZm9udC1zaXplOiAwLjlyZW07Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX25vdGljZSBpbWcgewogIHdpZHRoOiAxNnB4OwogIGhlaWdodDogMTZweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX25hbWUgaW5wdXRbdHlwZT0idGV4dCJdLAoucmVnaXN0ZXItZm9ybV9fZW1haWwgaW5wdXRbdHlwZT0idGV4dCJdLAoucmVnaXN0ZXItZm9ybV9fZ2l0aHViLXVzZXJuYW1lIGlucHV0W3R5cGU9InRleHQiXSB7CiAgcGFkZGluZzogMTBweCAxNHB4OwogIGJvcmRlci1yYWRpdXM6IDhweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX3N1Ym1pdCBidXR0b24gewogIHBhZGRpbmc6IDIwcHg7CiAgYm9yZGVyLXJhZGl1czogMTJweDsKICBmb250LXNpemU6IDEuMTVyZW07Cn0KCi5yZWdpc3Rlci1mb3JtX19tZXNzYWdlLAoucmVnaXN0ZXItZm9ybV9fbWVzc2FnZS0tZXJyb3IgewogIGdhcDogNHB4OwogIGZvbnQtc2l6ZTogMC42cmVtOwogIG1hcmdpbi10b3A6IDEwcHg7Cn0K"
       media="screen and (max-width: 480px)"
     />
     <link
       rel="stylesheet"
-      href="/frontend-challenges/projects/conference-ticket-generator/assets/desktop-D5_tD9kO.css"
+      href="data:text/css;base64,LmhlYWRlciB7CiAgcGFkZGluZzogNDVweCAwIDU1cHg7Cn0KCm1haW4gewogIHBhZGRpbmc6IDAgMjBweDsKfQoKLmRlc2NfX21haW4gewogIG1hcmdpbi1ib3R0b206IDI0cHg7CiAgZm9udC1zaXplOiAzLjJyZW07Cn0KCi5kZXNjX19zdWIgewogIG1hcmdpbi1ib3R0b206IDM2cHg7Cn0KCi5yZWdpc3Rlci1mb3JtIHsKICBnYXA6IDI0cHg7CiAgbWF4LXdpZHRoOiA0NDBweDsKICBtYXJnaW46IDAgYXV0byA4MHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fbGFiZWwgewogIG1hcmdpbi1ib3R0b206IDE2cHg7Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX3VwbG9hZCB7CiAgYm9yZGVyLXJhZGl1czogMTJweDsKICBwYWRkaW5nOiAxNnB4Owp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWRfX2ljb24gewogIHdpZHRoOiA0MnB4OwogIGhlaWdodDogNDJweDsKICBib3JkZXItcmFkaXVzOiA4cHg7CiAgbWFyZ2luOiAwIGF1dG8gMTRweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19pY29uIGltZyB7CiAgYm9yZGVyLXJhZGl1czogOHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWRfX2d1aWRlIHsKICBmb250LXNpemU6IDAuOXJlbTsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fbm90aWNlIGltZyB7CiAgd2lkdGg6IDE2cHg7CiAgaGVpZ2h0OiAxNnB4Owp9CgoucmVnaXN0ZXItZm9ybV9fbmFtZSBpbnB1dFt0eXBlPSJ0ZXh0Il0sCi5yZWdpc3Rlci1mb3JtX19lbWFpbCBpbnB1dFt0eXBlPSJ0ZXh0Il0sCi5yZWdpc3Rlci1mb3JtX19naXRodWItdXNlcm5hbWUgaW5wdXRbdHlwZT0idGV4dCJdIHsKICBwYWRkaW5nOiAxMHB4IDE0cHg7CiAgYm9yZGVyLXJhZGl1czogOHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fc3VibWl0IGJ1dHRvbiB7CiAgcGFkZGluZzogMjBweDsKICBib3JkZXItcmFkaXVzOiAxMnB4OwogIGZvbnQtc2l6ZTogMS4xNXJlbTsKfQoKLnJlZ2lzdGVyLWZvcm1fX21lc3NhZ2UsCi5yZWdpc3Rlci1mb3JtX19tZXNzYWdlLS1lcnJvciB7CiAgZ2FwOiA0cHg7CiAgZm9udC1zaXplOiAwLjhyZW07CiAgbWFyZ2luLXRvcDogMTBweDsKfQo="
       media="screen and (min-width: 481px)"
     />
-    <script type="module" crossorigin src="/frontend-challenges/projects/conference-ticket-generator/assets/index-C-8C3sOa.js"></script>
-    <link rel="modulepreload" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/style-BlhyRHz6.css">
+    <script type="module" crossorigin src="/frontend-challenges/projects/conference-ticket-generator/assets/index-1xPGRxIW.js"></script>
+    <link rel="modulepreload" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/normalize-DfVQnlV7.js">
+    <link rel="stylesheet" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/normalize-DVJDNZn5.css">
+    <link rel="stylesheet" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/index-CO4T4fD2.css">
   </head>
   <body>
-    <header>
+    <header class="header">
       <h1>
         <img src="/frontend-challenges/projects/conference-ticket-generator/assets/logo-full-BX2U3u4u.svg" alt="coding conf" />
       </h1>
@@ -51,7 +52,7 @@
             onkeyup="if(event.keyCode === 13) document.querySelector('#avatar').click()"
           >
             <div class="register-form__avatar__upload__icon">
-              <img src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-upload-KQv7YzAc.svg" alt="upload" />
+              <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='30'%20height='30'%20fill='none'%20viewBox='0%200%2030%2030'%3e%3cpath%20fill='%23F57463'%20fill-rule='evenodd'%20d='M21.894%2011.252a.264.264%200%200%201-.229-.225c-.368-2.634-2.51-5.924-6.663-5.924-4.465%200-6.3%203.636-6.657%205.928a.264.264%200%200%201-.228.22c-2.95.362-4.945%202.622-4.945%205.729a5.802%205.802%200%200%200%203.423%205.277%206.274%206.274%200%200%200%202.305.468h2.528a.45.45%200%200%200%20.45-.45c0-.267-.233-.472-.5-.484a3.077%203.077%200%200%201-2.049-.9%203.123%203.123%200%200%201%200-4.418l3.461-3.462c.147-.146.307-.277.479-.392.076-.05.158-.085.236-.129.1-.054.196-.114.301-.158.1-.04.206-.065.308-.096.092-.027.181-.062.276-.081.191-.039.384-.056.578-.059.011%200%20.022-.004.034-.004.01%200%20.018.003.027.004.196.002.391.02.584.059.094.019.18.053.271.08.105.031.211.055.313.098.1.042.193.098.288.15.084.046.17.083.25.137.154.103.295.221.428.349.016.014.034.024.049.039l3.463%203.463a3.124%203.124%200%200%201%200%204.42c-.558.56-1.284.86-2.05.897-.266.013-.497.219-.497.486%200%20.249.202.451.451.451h2.512c.435%200%201.314-.06%202.344-.473a5.794%205.794%200%200%200%203.394-5.272c0-3.104-1.991-5.363-4.935-5.728Z'%20clip-rule='evenodd'/%3e%3cpath%20fill='%23F57463'%20fill-rule='evenodd'%20d='M18.464%2019.62a.936.936%200%200%200%20.663-1.6l-3.464-3.464a.938.938%200%200%200-.664-.275l-.014.002a.932.932%200%200%200-.65.274l-3.462%203.462a.936.936%200%201%200%201.326%201.325l1.864-1.862v6.479a.937.937%200%201%200%201.875%200v-6.48l1.864%201.863a.93.93%200%200%200%20.662.275Z'%20clip-rule='evenodd'/%3e%3c/svg%3e" alt="upload" />
             </div>
             <p class="register-form__avatar__upload__guide">
               Drag and drop or click to upload
@@ -72,7 +73,7 @@
             </div>
           </label>
           <p class="register-form__message">
-            <img src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-BVGn1wZJ.svg" alt="upload notice" />
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%23D1D0D5'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23D1D0D5'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%23D1D0D5'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e" alt="upload notice" />
             Upload your photo (JPG or PNG, max size: 5MB)
           </p>
           <p
@@ -80,7 +81,7 @@
             data-code="invalid-avatar-img-type"
           >
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
 
@@ -91,14 +92,14 @@
             data-code="invalid-avatar-size"
           >
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             File too large. Please upload a photo under 500KB
           </p>
           <p class="register-form__message--error" data-code="required">
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             This field is required
@@ -109,7 +110,7 @@
           <input type="text" id="name" name="name" aria-required="true" />
           <p class="register-form__message--error" data-code="required">
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             This field is required
@@ -126,14 +127,14 @@
           />
           <p class="register-form__message--error" data-code="invalid-email">
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             Please enter a valid email address
           </p>
           <p class="register-form__message--error" data-code="required">
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             This field is required
@@ -152,7 +153,7 @@
           />
           <p class="register-form__message--error" data-code="required">
             <img
-              src="/frontend-challenges/projects/conference-ticket-generator/assets/icon-info-error-CeIJl0CI.svg"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
               alt="upload notice error"
             />
             This field is required
