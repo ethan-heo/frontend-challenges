@@ -1,3 +1,7 @@
+@import url("../reset.css");
+@import url("../normalize.css");
+@import url("./common.css");
+
 header {
   padding: 35px 0 45px;
 }
@@ -16,8 +20,8 @@ header {
 }
 
 .ticket {
-  max-width: 580px;
-  padding-bottom: max(10px, calc(580px * 0.46333));
+  max-width: 490px;
+  padding-bottom: max(10px, calc(490px * 0.46333));
 }
 
 .ticket__conference {
