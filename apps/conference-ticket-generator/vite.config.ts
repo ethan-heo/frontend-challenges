@@ -5,6 +5,14 @@ import pkg from "./package.json";
 
 export default defineConfig({
   base: `/frontend-challenges/projects/${pkg.challenge.name}/`,
+  build: {
+    rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, "index.html"),
+        ticket: path.resolve(__dirname, "ticket.html"),
+      },
+    },
+  },
   plugins: [
     moveDistFiles({
       distPath: path.resolve(__dirname, "dist"),
