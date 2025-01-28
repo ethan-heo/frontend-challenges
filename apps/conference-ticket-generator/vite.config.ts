@@ -6,6 +6,7 @@ import pkg from "./package.json";
 export default defineConfig({
   base: `/frontend-challenges/projects/${pkg.challenge.name}/`,
   build: {
+    assetsInlineLimit: 0,
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, "index.html"),

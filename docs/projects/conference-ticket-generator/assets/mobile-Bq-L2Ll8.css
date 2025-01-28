@@ -1,0 +1,75 @@
+header {
+  padding: 35px 0 45px;
+}
+
+main {
+  font-size: 2rem;
+  padding: 0 20px;
+}
+
+.desc__main {
+  margin-bottom: 24px;
+  padding: 0 20px;
+  font-size: 1.6rem;
+}
+
+.desc__sub {
+  margin-bottom: 36px;
+  padding: 0 20px;
+  font-size: 1.4rem;
+}
+
+.register-form {
+  margin-bottom: 80px;
+  gap: 24px;
+}
+
+.register-form__label {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.register-form__avatar__upload {
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.register-form__avatar__upload__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  margin: 0 auto 14px;
+}
+
+.register-form__avatar__upload__icon img {
+  border-radius: 8px;
+}
+
+.register-form__avatar__upload__guide {
+  font-size: 0.9rem;
+}
+
+.register-form__avatar__notice img {
+  width: 16px;
+  height: 16px;
+}
+
+.register-form__name input[type="text"],
+.register-form__email input[type="text"],
+.register-form__github-username input[type="text"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.register-form__submit button {
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+}
+
+.register-form__message,
+.register-form__message--error {
+  gap: 4px;
+  font-size: 0.6rem;
+  margin-top: 10px;
+}
