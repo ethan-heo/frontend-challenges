@@ -36,10 +36,15 @@ header {
   display: block;
 }
 
+.register-form__avatar input[type="file"] {
+  display: none;
+}
+
 .register-form__avatar__upload {
   position: relative;
   display: flex;
   border: 1px dashed var(--color-neutral-700);
+  outline-color: transparent;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -47,26 +52,23 @@ header {
   transition: background-color 0.2s ease, outline 0.2s ease;
 }
 
-.register-form__avatar__upload:hover {
+#avatar[aria-invalid="true"] + .register-form__avatar__upload {
+  border-color: var(--color-orange-700);
+}
+
+#avatar:not([data-uploaded="true"]) + .register-form__avatar__upload:hover {
   background-color: var(--color-neutral-700);
 }
 
-.register-form__avatar__upload:focus {
+#avatar:not([data-uploaded="true"]) + .register-form__avatar__upload:focus {
   outline: 1px solid var(--color-neutral-500);
 }
 
-.register-form__avatar__upload input[type="file"] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-}
-
-.register-form__avatar__upload:hover .register-form__avatar__upload__icon {
+#avatar:not([data-uploaded="true"])
+  + .register-form__avatar__upload:hover
+  .register-form__avatar__upload__icon {
   background-color: var(--color-neutral-700);
-  outline: 1px solid var(--color-neutral-500);
+  border: 1px solid var(--color-neutral-500);
 }
 
 .register-form__avatar__upload__icon {
@@ -74,18 +76,44 @@ header {
   align-items: center;
   justify-content: center;
   background-color: var(--color-neutral-700);
+  padding: 1px;
 }
 
 .register-form__avatar__upload__guide {
+  display: block;
   color: var(--color-neutral-500);
   text-align: center;
 }
 
-.register-form__avatar__notice {
-  display: flex;
-  align-items: center;
+.register-form__avatar__upload__btn-group {
+  display: none;
+  gap: 8px;
+}
+
+.register-form__avatar__upload__btn-group button {
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--color-neutral-300);
+  font-size: 0.8rem;
+  background-color: var(--color-neutral-700);
+}
+
+.register-form__avatar__upload__btn-group button:hover {
+  text-decoration-line: underline;
   color: var(--color-neutral-500);
 }
+
+#avatar[data-uploaded="true"]
+  ~ .register-form__avatar__upload
+  .register-form__avatar__upload__guide {
+  display: none;
+}
+#avatar[data-uploaded="true"]
+  ~ .register-form__avatar__upload
+  .register-form__avatar__upload__btn-group {
+  display: flex;
+}
+
 .register-form__avatar,
 .register-form__name,
 .register-form__email,
@@ -103,6 +131,11 @@ header {
   background-color: var(--color-neutral-800);
   border: 1px solid var(--color-neutral-700);
   transition: background-color 0.2s ease, outline 0.2s ease;
+}
+.register-form__name input[type="text"][aria-invalid="true"],
+.register-form__email input[type="text"][aria-invalid="true"],
+.register-form__github-username input[type="text"][aria-invalid="true"] {
+  border: 1px solid var(--color-orange-700);
 }
 
 .register-form__name input[type="text"]:hover,
@@ -124,4 +157,44 @@ header {
   color: var(--color-neutral-900);
   font-weight: var(--font-weight-700);
   border: none;
+}
+
+.register-form__message {
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral-500);
+}
+
+.register-form__message--error {
+  display: none;
+  align-items: center;
+  color: var(--color-orange-700);
+}
+
+.register-form__message--error svg path {
+  stroke: var(--color-orange-700);
+}
+
+.register-form input[aria-invalid="true"] ~ .register-form__message {
+  display: none;
+}
+.register-form
+  input[aria-invalid="true"][data-describedby="required"]
+  ~ [data-code="required"] {
+  display: flex;
+}
+.register-form
+  input[aria-invalid="true"][data-describedby="invalid-email"]
+  ~ [data-code="invalid-email"] {
+  display: flex;
+}
+.register-form
+  input[aria-invalid="true"][data-describedby="invalid-avatar-img-type"]
+  ~ [data-code="invalid-avatar-img-type"] {
+  display: flex;
+}
+.register-form
+  input[aria-invalid="true"][data-describedby="invalid-avatar-size"]
+  ~ [data-code="invalid-avatar-size"] {
+  display: flex;
 }

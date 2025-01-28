@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./public/favicon-32x32.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/x-icon" />
     <title>Conference ticket generator</title>
     <meta name="description" content="Generate conference tickets" />
     <link rel="stylesheet" href="./src/styles/reset.css" />
@@ -28,13 +28,13 @@
     </header>
     <main>
       <p class="desc__main">
-        Congrats, <span class="desc__main--highlight">Name</span>! Your ticket
-        is ready.
+        Congrats, <span class="desc__main--highlight user-name">Name</span>!
+        Your ticket is ready.
       </p>
       <p class="desc__sub">
         We've emailed your ticket to
-        <span class="desc__sub--highlight">Email</span> and will send updates in
-        the run up to the event.
+        <span class="desc__sub--highlight user-email">Email</span> and will send
+        updates in the run up to the event.
       </p>
       <div class="ticket">
         <div class="ticket__conference">
@@ -51,19 +51,22 @@
             alt="Avatar"
           />
           <div class="ticket__user__info">
-            <span class="ticket__user__info__name">Name</span>
+            <span class="ticket__user__info__name user-name">Name</span>
             <div class="ticket__user__info__contact">
               <img
                 class="ticket__user__info__contact__logo"
                 src="./src/assets/images/icon-github.svg"
                 alt="contact email"
               />
-              <span class="ticket__user__info__contact__email">Email</span>
+              <span class="ticket__user__info__contact__email user-github-name"
+                >Nickname</span
+              >
             </div>
           </div>
         </div>
         <div class="ticket__color">#01609</div>
       </div>
     </main>
+    <script type="module" src="./src/scripts/ticket.ts"></script>
   </body>
 </html>

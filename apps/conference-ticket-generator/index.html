@@ -36,11 +36,19 @@
       </p>
       <form class="register-form">
         <div class="register-form__avatar">
-          <label class="register-form__label" for="avatar">Upload Avatar</label>
+          <div class="register-form__label">Upload Avatar</div>
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            accept="image/*"
+            aria-required="true"
+          />
           <label
-            for="avatar"
-            tabindex="0"
             class="register-form__avatar__upload"
+            tabindex="0"
+            for="avatar"
+            onkeyup="if(event.keyCode === 13) document.querySelector('#avatar').click()"
           >
             <div class="register-form__avatar__upload__icon">
               <img src="./src/assets/images/icon-upload.svg" alt="upload" />
@@ -48,16 +56,64 @@
             <p class="register-form__avatar__upload__guide">
               Drag and drop or click to upload
             </p>
-            <input type="file" id="avatar" name="avatar" accept="image/*" />
+            <div class="register-form__avatar__upload__btn-group">
+              <button
+                type="button"
+                class="register-form__avatar__upload__btn--remove"
+              >
+                Remove image
+              </button>
+              <button
+                type="button"
+                class="register-form__avatar__upload__btn--change"
+              >
+                Change image
+              </button>
+            </div>
           </label>
-          <p class="register-form__avatar__notice">
+          <p class="register-form__message">
             <img src="./src/assets/images/icon-info.svg" alt="upload notice" />
             Upload your photo (JPG or PNG, max size: 5MB)
+          </p>
+          <p
+            class="register-form__message--error"
+            data-code="invalid-avatar-img-type"
+          >
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+
+            Invalid file type. Please upload a JPG or PNG
+          </p>
+          <p
+            class="register-form__message--error"
+            data-code="invalid-avatar-size"
+          >
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            File too large. Please upload a photo under 500KB
+          </p>
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            This field is required
           </p>
         </div>
         <div class="register-form__name">
           <label class="register-form__label" for="name">Full Name</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" aria-required="true" />
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
         </div>
         <div class="register-form__email">
           <label class="register-form__label" for="email">Email Address</label>
@@ -66,7 +122,22 @@
             id="email"
             name="email"
             placeholder="example@email.com"
+            aria-required="true"
           />
+          <p class="register-form__message--error" data-code="invalid-email">
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            Please enter a valid email address
+          </p>
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
         </div>
         <div class="register-form__github-username">
           <label class="register-form__label" for="github-username"
@@ -77,12 +148,22 @@
             id="github-username"
             name="github-username"
             placeholder="@youtusername"
+            aria-required="true"
           />
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="./src/assets/images/icon-info-error.svg"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
         </div>
         <div class="register-form__submit">
           <button type="submit">Generate My Ticket</button>
         </div>
       </form>
     </main>
+    <script type="module" src="./src/scripts/form.ts"></script>
+    <script type="module" src="./src/scripts/form-avatar.ts"></script>
   </body>
 </html>

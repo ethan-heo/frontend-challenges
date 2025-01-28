@@ -8,7 +8,7 @@
     "description": "In this challenge, you'll create a form that generates a ticket. There's a lot of scope for customizing the generated ticket and putting your own stamp on the project.",
     "source": "Frontend Mentor",
     "sourceLink": "https://www.frontendmentor.io/challenges/conference-ticket-generator-5O6oaiEeW",
-    "tags": [
+    "skills": [
       "html",
       "css",
       "typescript"

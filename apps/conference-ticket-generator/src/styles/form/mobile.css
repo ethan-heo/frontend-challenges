@@ -32,7 +32,6 @@ main {
 .register-form__avatar__upload {
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 10px;
 }
 
 .register-form__avatar__upload__icon {
@@ -42,13 +41,12 @@ main {
   margin: 0 auto 14px;
 }
 
-.register-form__avatar__upload__guide {
-  font-size: 0.9rem;
+.register-form__avatar__upload__icon img {
+  border-radius: 8px;
 }
 
-.register-form__avatar__notice {
-  gap: 4px;
-  font-size: 0.6rem;
+.register-form__avatar__upload__guide {
+  font-size: 0.9rem;
 }
 
 .register-form__avatar__notice img {
@@ -67,4 +65,11 @@ main {
   padding: 20px;
   border-radius: 12px;
   font-size: 1.15rem;
+}
+
+.register-form__message,
+.register-form__message--error {
+  gap: 4px;
+  font-size: 0.6rem;
+  margin-top: 10px;
 }
