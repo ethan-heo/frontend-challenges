@@ -14,6 +14,10 @@ const pkgs = [];
 const TARGET = "package.json";
 
 for (const challengeDirPath of challengeDirPaths) {
+  if (fs.statSync(challengeDirPath).isFile()) {
+    continue;
+  }
+
   const contents = fs.readdirSync(challengeDirPath);
   const pkgFile = contents.find((content) => content === TARGET);
 
