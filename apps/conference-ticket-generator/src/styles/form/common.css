@@ -72,11 +72,23 @@ body {
 }
 
 .register-form__avatar__upload__icon {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-neutral-700);
-  padding: 1px;
+}
+
+.register-form__avatar__upload__icon div {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+  background-image: url(../../assets/images/icon-upload.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
 }
 
 .register-form__avatar__upload__guide {

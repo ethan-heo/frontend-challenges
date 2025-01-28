@@ -67,6 +67,9 @@ body {
 }
 
 .ticket__user__avatar {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 8px;
 }
 

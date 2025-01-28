@@ -3,12 +3,12 @@ const avatarEl = document.getElementById("avatar") as HTMLFormElement | null;
 if (!avatarEl) {
   throw new Error("Avatar element not found");
 }
-const imgEl = document.querySelector(
-  ".register-form__avatar__upload__icon img"
+const divEl = document.querySelector(
+  ".register-form__avatar__upload__icon div"
 ) as HTMLImageElement | null;
 
-if (!imgEl) {
-  throw new Error("Image element not found");
+if (!divEl) {
+  throw new Error("Div element not found");
 }
 
 const [removeBtn, changeBtn] = [
@@ -23,7 +23,7 @@ if (!removeBtn || !changeBtn) {
 const COMMAND = {
   UPLOADED: "uploaded",
 };
-const originalAvatarSrc = imgEl.src;
+const originalAvatarSrc = window.getComputedStyle(divEl).backgroundImage;
 
 avatarEl.addEventListener("change", (e) => {
   const target = e.target as HTMLInputElement;
@@ -34,7 +34,7 @@ avatarEl.addEventListener("change", (e) => {
 
     reader.readAsDataURL(file);
     reader.onload = () => {
-      imgEl.src = reader.result as string;
+      divEl.style.backgroundImage = `url(${reader.result})` as string;
       target.dataset[COMMAND.UPLOADED] = "true";
     };
   }
@@ -43,7 +43,7 @@ avatarEl.addEventListener("change", (e) => {
 removeBtn.addEventListener("click", () => {
   avatarEl.value = "";
   avatarEl.dataset[COMMAND.UPLOADED] = "false";
-  imgEl.src = originalAvatarSrc;
+  divEl.style.backgroundImage = originalAvatarSrc;
 });
 
 changeBtn.addEventListener("click", () => {

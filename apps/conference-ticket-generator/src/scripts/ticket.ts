@@ -31,7 +31,7 @@ userEmailEls.forEach((el) => {
 });
 
 userAvatarEls.forEach((el) => {
-  el.setAttribute("src", avatar);
+  (el as HTMLDivElement).style.backgroundImage = `url(${avatar})`;
 });
 
 userGithubNameEls.forEach((el) => {
