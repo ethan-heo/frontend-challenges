@@ -1,17 +1,23 @@
 main {
-  gap: 24px;
-  padding: 24px 18px;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(8, auto);
-}
-
-section {
-  border-radius: 12px;
 }
 
 .five-stars {
   grid-column: 1 / 2;
   grid-row: 1;
+  padding: 7%;
+}
+
+.five-stars h2 {
+  font-size: 2rem;
+  margin-bottom: 5%;
+}
+
+.five-stars img {
+  display: block;
+  width: 60%;
+  margin: 0 auto 5%;
 }
 
 .multiple-platforms {
@@ -19,36 +25,106 @@ section {
   grid-row: 2;
 }
 
+.multiple-platforms {
+  padding: 7%;
+}
+
+.multiple-platforms img {
+  margin-bottom: 5%;
+  border-radius: 24px;
+}
+
+.multiple-platforms h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
 .consistent-schedule {
   grid-column: 1 / 2;
   grid-row: 3;
+  padding: 5% 5% 0;
 }
 
 .consistent-schedule img {
+  position: relative;
+  top: 10%;
   width: 80%;
+}
+
+.consistent-schedule h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .schedule-posts {
   grid-column: 1 / 2;
   grid-row: 4;
+  gap: 24px;
+  padding: 7% 6%;
+  text-align: center;
+}
+
+.schedule-posts h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .audience-growth {
+  display: flex;
+  flex-direction: column;
   grid-column: 1 / 2;
   grid-row: 5;
+  gap: 32px;
+  padding: 8% 16%;
+  text-align: center;
+}
+
+.audience-growth h2 {
+  font-size: 2rem;
 }
 
 .grow-followers {
   grid-column: 1 / 2;
   grid-row: 6;
+  padding: 10% 7%;
+}
+
+.grow-followers h2 {
+  margin-bottom: 10%;
+}
+
+.grow-followers--highlight {
+  font-size: 2.4rem;
+}
+
+.grow-followers img {
+  width: 55%;
 }
 
 .create-post {
   grid-column: 1 / 2;
   grid-row: 7;
+  padding: 12% 10%;
+}
+
+.create-post h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 10%;
+}
+
+.create-post img {
+  width: 60%;
 }
 
 .ai-content {
   grid-column: 1 / 2;
   grid-row: 8;
+  padding: 24px 18px;
+}
+
+.ai-content h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 10%;
 }

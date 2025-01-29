@@ -1,12 +1,6 @@
 main {
-  gap: 24px;
-  padding: 24px 18px;
   grid-template-columns: repeat(16, auto);
   grid-template-rows: repeat(16, auto);
-}
-
-section {
-  border-radius: 12px;
 }
 
 .five-stars {
@@ -17,6 +11,13 @@ section {
 
 .five-stars h2 {
   font-size: 4.2rem;
+  margin-bottom: 5%;
+}
+
+.five-stars img {
+  display: block;
+  width: 60%;
+  margin: 0 auto 5%;
 }
 
 .five-stars p {
@@ -33,20 +34,24 @@ section {
 .multiple-platforms img {
   width: 140%;
   max-width: initial;
+  border-radius: 24px;
+  margin-bottom: 5%;
 }
 
 .multiple-platforms h2 {
   font-size: 2.4rem;
+  font-weight: 500;
 }
 
 .consistent-schedule {
   grid-column: 9 / 13;
   grid-row: 7 / 12;
-  padding: 10%;
+  padding: 10% 10% 0;
 }
 
 .consistent-schedule h2 {
   font-size: 2.4rem;
+  font-weight: 500;
 }
 
 .consistent-schedule img {
@@ -61,6 +66,7 @@ section {
   grid-column: 13 / 18;
   grid-row: 1 / 12;
   padding: 12% 10%;
+  gap: 24px;
   text-align: left;
   overflow: hidden;
 }
@@ -72,6 +78,7 @@ section {
 
 .schedule-posts h2 {
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .schedule-posts p {
@@ -83,6 +90,7 @@ section {
   grid-row: 12 / 17;
   display: flex;
   flex-direction: row;
+  gap: 32px;
   padding: 4%;
   text-align: left;
   align-items: center;
@@ -99,10 +107,15 @@ section {
 .grow-followers {
   grid-column: 5 / 9;
   grid-row: 12 / 17;
+  padding: 10% 7%;
 }
 
 .grow-followers img {
   width: 90%;
+}
+
+.grow-followers h2 {
+  margin-bottom: 10%;
 }
 
 .grow-followers--highlight {
@@ -117,14 +130,22 @@ section {
 
 .create-post h2 {
   font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 10%;
+}
+
+.create-post img {
+  width: 60%;
 }
 
 .ai-content {
   grid-column: 1 / 5;
   grid-row: 9 / 17;
+  padding: 12% 10%;
 }
 
 .ai-content h2 {
   font-size: 2.8rem;
+  font-weight: 500;
   margin-bottom: 22%;
 }
