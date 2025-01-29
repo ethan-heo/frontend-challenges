@@ -24,6 +24,10 @@ section {
   grid-row: 3;
 }
 
+.consistent-schedule img {
+  width: 80%;
+}
+
 .schedule-posts {
   grid-column: 1 / 2;
   grid-row: 4;

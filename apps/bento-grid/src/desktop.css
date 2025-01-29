@@ -12,26 +12,88 @@ section {
 .five-stars {
   grid-column: 5 / 13;
   grid-row: 1 / 7;
+  padding: 16% 10%;
+}
+
+.five-stars h2 {
+  font-size: 4.2rem;
+}
+
+.five-stars p {
+  font-size: 1.6rem;
 }
 
 .multiple-platforms {
   grid-column: 5 / 9;
   grid-row: 7 / 12;
+  overflow: hidden;
+  padding: 10%;
+}
+
+.multiple-platforms img {
+  width: 140%;
+  max-width: initial;
+}
+
+.multiple-platforms h2 {
+  font-size: 2.4rem;
 }
 
 .consistent-schedule {
   grid-column: 9 / 13;
   grid-row: 7 / 12;
+  padding: 10%;
+}
+
+.consistent-schedule h2 {
+  font-size: 2.4rem;
+}
+
+.consistent-schedule img {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: -26%;
+  top: initial;
 }
 
 .schedule-posts {
-  grid-column: 13 / 17;
+  grid-column: 13 / 18;
   grid-row: 1 / 12;
+  padding: 12% 10%;
+  text-align: left;
+  overflow: hidden;
+}
+
+.schedule-posts img {
+  width: 200%;
+  max-width: initial;
+}
+
+.schedule-posts h2 {
+  font-size: 2rem;
+}
+
+.schedule-posts p {
+  font-size: 1.4rem;
 }
 
 .audience-growth {
-  grid-column: 9 / 17;
+  grid-column: 9 / 18;
   grid-row: 12 / 17;
+  display: flex;
+  flex-direction: row;
+  padding: 4%;
+  text-align: left;
+  align-items: center;
+}
+
+.audience-growth h2 {
+  font-size: 2.4rem;
+}
+
+.audience-growth img {
+  width: 50%;
 }
 
 .grow-followers {
@@ -39,12 +101,30 @@ section {
   grid-row: 12 / 17;
 }
 
+.grow-followers img {
+  width: 90%;
+}
+
+.grow-followers--highlight {
+  font-size: 3.6rem;
+}
+
 .create-post {
   grid-column: 1 / 5;
   grid-row: 1 / 9;
+  padding: 10%;
+}
+
+.create-post h2 {
+  font-size: 2.4rem;
 }
 
 .ai-content {
   grid-column: 1 / 5;
   grid-row: 9 / 17;
+}
+
+.ai-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 22%;
 }
