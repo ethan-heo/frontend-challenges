@@ -1,0 +1,50 @@
+main {
+  gap: 24px;
+  padding: 24px 18px;
+  grid-template-columns: repeat(16, auto);
+  grid-template-rows: repeat(16, auto);
+}
+
+section {
+  border-radius: 12px;
+}
+
+.five-stars {
+  grid-column: 5 / 13;
+  grid-row: 1 / 7;
+}
+
+.multiple-platforms {
+  grid-column: 5 / 9;
+  grid-row: 7 / 12;
+}
+
+.consistent-schedule {
+  grid-column: 9 / 13;
+  grid-row: 7 / 12;
+}
+
+.schedule-posts {
+  grid-column: 13 / 17;
+  grid-row: 1 / 12;
+}
+
+.audience-growth {
+  grid-column: 9 / 17;
+  grid-row: 12 / 17;
+}
+
+.grow-followers {
+  grid-column: 5 / 9;
+  grid-row: 12 / 17;
+}
+
+.create-post {
+  grid-column: 1 / 5;
+  grid-row: 1 / 9;
+}
+
+.ai-content {
+  grid-column: 1 / 5;
+  grid-row: 9 / 17;
+}
