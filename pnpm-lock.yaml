@@ -15,7 +15,27 @@ importers:
         specifier: ^2.3.4
         version: 2.3.4
 
+  apps/bento-grid:
+    dependencies:
+      styles:
+        specifier: workspace:*
+        version: link:../../packages/styles
+    devDependencies:
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^6.0.5
+        version: 6.0.11(@types/node@22.10.10)
+      vite-plugin-move-dist-files:
+        specifier: workspace:*
+        version: link:../../packages/vite-plugin-move-dist-files
+
   apps/conference-ticket-generator:
+    dependencies:
+      styles:
+        specifier: workspace:*
+        version: link:../../packages/styles
     devDependencies:
       typescript:
         specifier: ~5.6.2
@@ -35,6 +55,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      styles:
+        specifier: workspace:*
+        version: link:../../packages/styles
     devDependencies:
       '@eslint/js':
         specifier: ^9.17.0
@@ -124,6 +147,8 @@ importers:
       vite:
         specifier: ^6.0.5
         version: 6.0.11(@types/node@22.10.10)
+
+  packages/styles: {}
 
   packages/vite-plugin-move-dist-files:
     devDependencies:

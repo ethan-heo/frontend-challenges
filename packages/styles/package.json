@@ -1,0 +1,9 @@
+{
+  "name": "styles",
+  "version": "1.0.0",
+  "exports": {
+    "./reset.css": {
+      "import": "./reset.css"
+    }
+  }
+}

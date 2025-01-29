@@ -8,8 +8,22 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "challenge": {
+    "name": "bento-grid",
+    "description": "This challenge is perfect for testing your CSS Grid and responsive skills with this bento grid layout.",
+    "source": "Frontend Mentor",
+    "sourceLink": "https://www.frontendmentor.io/challenges/bento-grid-RMydElrlOj",
+    "skills": [
+      "html",
+      "css"
+    ]
+  },
+  "dependencies": {
+    "styles": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-move-dist-files": "workspace:*"
   }
 }
