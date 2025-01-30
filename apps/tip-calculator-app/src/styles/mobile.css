@@ -1,0 +1,92 @@
+.title {
+  letter-spacing: 0.5em;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  padding: 40px 0;
+}
+
+.calc-section {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 28px 24px;
+}
+
+.form__calc__label {
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+}
+
+#bill,
+#people {
+  padding: 8px 12px 8px 24px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#bill {
+  background-image: url(../assets/images/icon-dollar.svg);
+}
+
+#people {
+  background-image: url(../assets/images/icon-person.svg);
+}
+
+.form__bill,
+.form__tip,
+.form__people {
+  margin-bottom: 28px;
+}
+
+.form__tip {
+  gap: 12px;
+}
+
+.form__tip__selector {
+  padding: 8px 0;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  width: calc(50% - 6px);
+}
+
+#custom-tip {
+  width: calc(50% - 6px);
+  font-size: 1.2rem;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.form__people--error {
+  font-size: 0.8rem;
+  top: -29px;
+}
+
+.result {
+  gap: 24px;
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+.result__category {
+  gap: 24px;
+}
+
+.result__category__item__title {
+  font-size: 0.6rem;
+}
+
+.result__category__item__title--highlight {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.result__category__item__price {
+  font-size: 1.8rem;
+}
+
+.result__reset-btn {
+  font-size: 1rem;
+  font-weight: var(--font-weight-700);
+  padding: 12px 0;
+  border-radius: 4px;
+}

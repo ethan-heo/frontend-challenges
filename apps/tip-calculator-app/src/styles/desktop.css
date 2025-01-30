@@ -1,0 +1,105 @@
+.title {
+  letter-spacing: 0.5em;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  padding: 120px 0 80px;
+}
+
+.calc-section {
+  border-radius: 18px;
+  padding: 40px 36px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.calc-section form {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.form,
+.result {
+  width: calc(50% - 16px);
+}
+
+.form__calc__label {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+#bill,
+#people {
+  padding: 8px 12px 8px 24px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+#bill {
+  background-image: url(../assets/images/icon-dollar.svg);
+}
+
+#people {
+  background-image: url(../assets/images/icon-person.svg);
+}
+
+.form__bill,
+.form__tip,
+.form__people {
+  margin-bottom: 24px;
+}
+
+.form__tip {
+  gap: 12px;
+}
+
+.form__tip__selector {
+  padding: 12px 0;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  width: calc(33.333% - 8px);
+}
+
+#custom-tip {
+  width: calc(33.333% - 8px);
+  font-size: 1.6rem;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.form__people--error {
+  font-size: 1rem;
+  top: -32px;
+}
+
+.result {
+  padding: 40px 20px;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+
+.result__category {
+  gap: 48px;
+}
+
+.result__category__item__title {
+  font-size: 0.6rem;
+}
+
+.result__category__item__title--highlight {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.result__category__item__price {
+  font-size: 2.4rem;
+}
+
+.result__reset-btn {
+  font-size: 1rem;
+  font-weight: var(--font-weight-700);
+  padding: 12px 0;
+  border-radius: 4px;
+  align-self: flex-end;
+}
