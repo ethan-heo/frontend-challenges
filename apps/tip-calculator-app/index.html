@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  Bill
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>SPLITTER</h2>
+      <section>
+        <form>
+          <label for="bill">Bill</label>
+          <div>
+            <input id="bill" name="bill" type="text" />
+            <div>$</div>
+          </div>
+          <label for="tip">Select Tip %</label>
+          <div>
+            <input type="radio" name="five" id="tip" />
+            <input type="radio" name="ten" id="tip" />
+            <input type="radio" name="fifteen" id="tip" />
+            <input type="radio" name="twenty-five" id="tip" />
+            <input type="radio" name="fifty" id="tip" />
+            <input type="text" name="custom" id="tip" />
+          </div>
+          <label for="people">Number of People</label>
+          <div>
+            <input type="text" name="people" id="people" />
+            <div>icon</div>
+          </div>
+        </form>
+        <div>
+          <div>
+            <div><span>Tip Amount</span>/ person</div>
+            <div>tip</div>
+          </div>
+          <div>
+            <div><span>Total</span>/ person</div>
+            <div>Price</div>
+            <button type="button">RESET</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
+    person Total / person Reset
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
