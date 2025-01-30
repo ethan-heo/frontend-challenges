@@ -148,6 +148,22 @@ importers:
         specifier: ^6.0.5
         version: 6.0.11(@types/node@22.10.10)
 
+  apps/tip-calculator-app:
+    dependencies:
+      styles:
+        specifier: workspace:*
+        version: link:../../packages/styles
+    devDependencies:
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^6.0.5
+        version: 6.0.11(@types/node@22.10.10)
+      vite-plugin-move-dist-files:
+        specifier: workspace:*
+        version: link:../../packages/vite-plugin-move-dist-files
+
   packages/styles: {}
 
   packages/vite-plugin-move-dist-files:
