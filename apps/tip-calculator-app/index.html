@@ -51,29 +51,36 @@
           <div class="form">
             <label class="form__calc__label" for="bill">Bill</label>
             <div class="form__bill">
-              <input id="bill" name="bill" type="text" />
+              <input id="bill" name="bill" type="number" value="0" />
             </div>
             <label class="form__calc__label" for="custom-tip"
               >Select Tip %</label
             >
             <div class="form__tip">
-              <input type="radio" id="five" name="tip" />
+              <input type="radio" id="five" name="tip" value="5" />
               <label class="form__tip__selector" for="five">5%</label>
-              <input type="radio" id="ten" name="tip" />
+              <input type="radio" id="ten" name="tip" value="10" />
               <label class="form__tip__selector" for="ten">10%</label>
-              <input type="radio" id="fifteen" name="tip" checked />
+              <input type="radio" id="fifteen" name="tip" value="15" checked />
               <label class="form__tip__selector" for="fifteen">15%</label>
-              <input type="radio" id="twenty-five" name="tip" />
+              <input type="radio" id="twenty-five" name="tip" value="25" />
               <label class="form__tip__selector" for="twenty-five">25%</label>
-              <input type="radio" id="fifty" name="tip" />
+              <input type="radio" id="fifty" name="tip" value="50" />
               <label class="form__tip__selector" for="fifty">50%</label>
-              <input type="text" name="custom-tip" id="custom-tip" />
+              <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" />
             </div>
             <label class="form__calc__label" for="people"
               >Number of People
             </label>
             <div class="form__people">
-              <input type="text" name="people" id="people" />
+              <input
+                type="number"
+                name="people"
+                id="people"
+                value="0"
+                min="1"
+                step="1"
+              />
               <p class="form__people--error">Can't be zero</p>
             </div>
           </div>
@@ -85,7 +92,7 @@
                     >Tip Amount</span
                   >/ person
                 </div>
-                <div class="result__category__item__price">tip</div>
+                <div class="result__category__item__tip">$0.00</div>
               </div>
               <div class="result__category__item">
                 <div class="result__category__item__title">
@@ -93,12 +100,10 @@
                     >Total</span
                   >/ person
                 </div>
-                <div class="result__category__item__price">Price</div>
+                <div class="result__category__item__price">$0.00</div>
               </div>
             </div>
-            <button class="result__reset-btn" type="button" disabled>
-              RESET
-            </button>
+            <input class="result__reset-btn" type="reset" disabled></input>
           </div>
         </form>
       </section>
@@ -109,5 +114,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script src="./src/scripts/calculator.ts"></script>
   </body>
 </html>

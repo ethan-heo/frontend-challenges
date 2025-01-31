@@ -80,7 +80,8 @@
   margin-bottom: 8px;
 }
 
-.result__category__item__price {
+.result__category__item__price,
+.result__category__item__tip {
   font-size: 1.8rem;
 }
 

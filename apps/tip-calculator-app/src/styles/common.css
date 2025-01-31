@@ -36,7 +36,7 @@ body {
 #people {
   border: none;
   background-color: var(--color-neutral-very-light-grayish-cyan);
-  color: var(--color-neutral-very-dark-grayish-cyan);
+  color: var(--color-neutral-dark-grayish-cyan);
   width: 100%;
   box-sizing: border-box;
   text-align: right;
@@ -45,6 +45,8 @@ body {
   border: 1px solid transparent;
   caret-color: var(--color-primary);
   outline: none;
+  appearance: none;
+  margin: 0;
 }
 
 #bill {
@@ -91,6 +93,9 @@ input[type="radio"]:checked + .form__tip__selector {
   border: 1px solid transparent;
   caret-color: var(--color-primary);
   outline: none;
+  appearance: none;
+  margin: 0;
+  font-weight: var(--font-weight-700);
 }
 #custom-tip:hover,
 #custom-tip:focus-visible {
@@ -147,7 +152,8 @@ input[type="radio"]:checked + .form__tip__selector {
   color: var(--color-neutral-very-light-grayish-cyan);
 }
 
-.result__category__item__price {
+.result__category__item__price,
+.result__category__item__tip {
   color: var(--color-primary);
 }
 
@@ -156,6 +162,7 @@ input[type="radio"]:checked + .form__tip__selector {
   background-color: var(--color-primary);
   color: var(--color-neutral-very-dark-grayish-cyan);
   cursor: default;
+  border: none;
 }
 
 .result__reset-btn:disabled {
