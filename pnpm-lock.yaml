@@ -50,6 +50,52 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vite-plugin-move-dist-files
 
+  apps/product-list-with-cart:
+    dependencies:
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.17.0
+        version: 9.19.0
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.18
+      '@types/react-dom':
+        specifier: ^18.3.5
+        version: 18.3.5(@types/react@18.3.18)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.3.4(vite@6.0.11(@types/node@22.10.10))
+      eslint:
+        specifier: ^9.17.0
+        version: 9.19.0
+      eslint-plugin-react-hooks:
+        specifier: ^5.0.0
+        version: 5.1.0(eslint@9.19.0)
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.16
+        version: 0.4.18(eslint@9.19.0)
+      globals:
+        specifier: ^15.14.0
+        version: 15.14.0
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      typescript-eslint:
+        specifier: ^8.18.2
+        version: 8.21.0(eslint@9.19.0)(typescript@5.6.3)
+      vite:
+        specifier: ^6.0.5
+        version: 6.0.11(@types/node@22.10.10)
+      vite-plugin-move-dist-files:
+        specifier: workspace:*
+        version: link:../../packages/vite-plugin-move-dist-files
+
   apps/showcase:
     dependencies:
       react:
