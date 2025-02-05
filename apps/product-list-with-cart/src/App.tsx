@@ -1,19 +1,19 @@
+import Cart from "./components/Cart";
+import Aside from "./components/layouts/Aside";
+import Section from "./components/layouts/Section";
+import ProductList from "./components/ProductList";
+
 function App() {
-  // const style = useMediaQueryWithEmotion([
-  //   {
-  //     mediaQuery: `(max-width: 480px)`,
-  //     emotion: css`
-  //       background-color: #f00;
-  //     `,
-  //   },
-  //   {
-  //     mediaQuery: `(min-width: 481px)`,
-  //     emotion: css`
-  //       background-color: #ff0;
-  //     `,
-  //   },
-  // ]);
-  return <div>hello world</div>;
+  return (
+    <main>
+      <Section>
+        <ProductList />
+      </Section>
+      <Aside>
+        <Cart />
+      </Aside>
+    </main>
+  );
 }
 
 export default App;
