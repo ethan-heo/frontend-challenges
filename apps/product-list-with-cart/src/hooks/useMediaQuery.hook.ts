@@ -1,40 +1,59 @@
+import { SerializedStyles } from "@emotion/react";
 import { useLayoutEffect, useState } from "react";
 
-interface Media {
-  mediaQuery: string;
-  emotion: string;
+interface StyleMap {
+  mobile?: SerializedStyles;
+  tablet?: SerializedStyles;
+  desktop?: SerializedStyles;
 }
 
-const useMediaQueryWithEmotion = (medias: Media[]) => {
-  const [css, setCSS] = useState<string>("");
+const useMediaQueryWithEmotion = (styleMap: StyleMap = {}) => {
+  const [style, setStyle] = useState<SerializedStyles>();
 
   useLayoutEffect(() => {
-    const mediaQuery = medias.map(
-      (media) =>
-        new MediaQuery(media.mediaQuery, (matches: boolean) => {
-          if (matches) {
-            setCSS(media.emotion);
-          }
-        }),
-    );
+    const styles = Object.entries(styleMap);
 
-    mediaQuery.forEach((matchMedia) => {
-      matchMedia.init();
+    if (styles.length === 0) {
+      return;
+    }
+
+    const MEDIA_QUERY: Record<keyof StyleMap, string> = {
+      mobile: `(max-width: 480px)`,
+      tablet: `(min-width: 481px) and (max-width: 1024px)`,
+      desktop: `(min-width: 1025px)`,
+    };
+    const handlers: MatchMediaHandler[] = [];
+
+    for (const [platform, style] of styles) {
+      handlers.push(
+        new MatchMediaHandler(
+          MEDIA_QUERY[platform as keyof StyleMap],
+          (matches) => {
+            if (matches) {
+              setStyle(style);
+            }
+          },
+        ),
+      );
+    }
+
+    handlers.forEach((handler) => {
+      handler.init();
     });
 
     return () => {
-      mediaQuery.forEach((matchMedia) => {
-        matchMedia.clear();
+      handlers.forEach((handler) => {
+        handler.clear();
       });
     };
   }, []);
 
-  return css;
+  return style;
 };
 
 export default useMediaQueryWithEmotion;
 
-class MediaQuery {
+class MatchMediaHandler {
   #matchMedia: MediaQueryList;
   #callback: (ev: MediaQueryListEvent) => void;
   #changeCallback: (matches: boolean) => void;
