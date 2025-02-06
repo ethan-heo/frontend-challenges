@@ -7,6 +7,12 @@ interface StyleMap {
   desktop?: SerializedStyles;
 }
 
+export const MEDIA_QUERY: Record<keyof StyleMap, string> = {
+  mobile: `(max-width: 480px)`,
+  tablet: `(min-width: 481px) and (max-width: 1024px)`,
+  desktop: `(min-width: 1025px)`,
+};
+
 const useMediaQueryWithEmotion = (styleMap: StyleMap = {}) => {
   const [style, setStyle] = useState<SerializedStyles>();
 
@@ -17,11 +23,6 @@ const useMediaQueryWithEmotion = (styleMap: StyleMap = {}) => {
       return;
     }
 
-    const MEDIA_QUERY: Record<keyof StyleMap, string> = {
-      mobile: `(max-width: 480px)`,
-      tablet: `(min-width: 481px) and (max-width: 1024px)`,
-      desktop: `(min-width: 1025px)`,
-    };
     const handlers: MatchMediaHandler[] = [];
 
     for (const [platform, style] of styles) {

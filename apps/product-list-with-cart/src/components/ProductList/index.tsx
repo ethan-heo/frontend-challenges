@@ -4,6 +4,7 @@ import common from "./ProductList.common.styles";
 import desktop from "./ProductList.desktop.styles";
 import mobile from "./ProductList.mobile.styles";
 import tablet from "./ProductList.tablet.styles";
+import data from "../../data.json";
 
 const ProductList: React.FC = () => {
   const style = useMediaQueryWithEmotion({
@@ -13,10 +14,9 @@ const ProductList: React.FC = () => {
   });
   return (
     <ul css={[common, style]}>
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+      {data.map((product, idx) => (
+        <ProductItem key={`product-${idx}`} {...product} />
+      ))}
     </ul>
   );
 };
