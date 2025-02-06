@@ -1,15 +1,20 @@
+import styles from "./CartItem.styles";
+import RemoveIcon from "../../../assets/images/icon-remove-item.svg?react";
+
 const CartItem: React.FC = () => {
   return (
-    <li>
+    <li css={styles} className="cart-item">
       <div>
-        <strong>제품 이름</strong>
-        <div>
-          <span>제품 갯수</span>
-          <span>@ 제품 가격</span>
-          <span>제품 총 가격</span>
+        <strong className="cart-item__product-name">Classic Tiramisu</strong>
+        <div className="cart-item__product-info">
+          <span className="cart-item__product-info__quantity">1x</span>
+          <span className="cart-item__product-info__price">@5.50</span>
+          <span className="cart-item__product-info__total-price">$5.50</span>
         </div>
       </div>
-      <div>닫기 icon</div>
+      <button aria-label="remove item" className="cart-item__remove-item">
+        <RemoveIcon />
+      </button>
     </li>
   );
 };

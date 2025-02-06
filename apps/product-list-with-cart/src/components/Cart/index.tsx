@@ -1,22 +1,25 @@
-import useMediaQueryWithEmotion from "../../hooks/useMediaQuery.hook";
-import common from "./Cart.common.styles";
-import desktop from "./Cart.desktop.styles";
-import mobile from "./Cart.mobile.styles";
-import tablet from "./Cart.tablet.styles";
+import styles from "./Cart.styles";
+import CartAd from "./CartAd";
+import CartConfirmButton from "./CartConfirmButton";
 import CartEmpty from "./CartEmpty";
 import CartList from "./CartList";
+import CartTotal from "./CartTotal";
 
 const Cart: React.FC = () => {
-  const style = useMediaQueryWithEmotion({
-    mobile,
-    tablet,
-    desktop,
-  });
+  const productCount = 0;
   return (
-    <div css={[common, style]}>
-      <h2>Your Cart (개수)</h2>
-      <CartEmpty />
-      <CartList />
+    <div css={styles}>
+      <h2>Your Cart ({productCount})</h2>
+      {productCount > 0 ? (
+        <>
+          <CartList />
+          <CartTotal />
+          <CartAd />
+          <CartConfirmButton />
+        </>
+      ) : (
+        <CartEmpty />
+      )}
     </div>
   );
 };

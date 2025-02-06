@@ -20,6 +20,7 @@ const normalize = css`
     font-family: "Red Hat Text", serif;
     font-size: var(--font-size);
     font-weight: var(--font-weight-400);
+    background-color: var(--color-rose-100);
   }
 
   * {
