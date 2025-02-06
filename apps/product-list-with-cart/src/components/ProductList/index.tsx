@@ -14,6 +14,9 @@ const ProductList: React.FC = () => {
   return (
     <ul css={[common, style]}>
       <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
     </ul>
   );
 };
