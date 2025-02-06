@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import moveDistFiles from "vite-plugin-move-dist-files";
+import svgr from "vite-plugin-svgr";
 import path from "node:path";
 import pkg from "./package.json";
 
@@ -13,5 +14,6 @@ export default defineConfig({
         `../../docs/projects/${pkg.challenge.name}`,
       ),
     }),
+    svgr(),
   ],
 });

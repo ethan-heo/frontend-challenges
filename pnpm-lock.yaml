@@ -101,6 +101,9 @@ importers:
       vite-plugin-move-dist-files:
         specifier: workspace:*
         version: link:../../packages/vite-plugin-move-dist-files
+      vite-plugin-svgr:
+        specifier: ^4.3.0
+        version: 4.3.0(rollup@4.32.0)(typescript@5.6.3)(vite@6.0.11(@types/node@22.10.10))
 
   apps/showcase:
     dependencies:
