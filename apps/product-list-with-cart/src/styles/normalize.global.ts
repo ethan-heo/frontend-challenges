@@ -21,6 +21,10 @@ const normalize = css`
     font-size: var(--font-size);
     font-weight: var(--font-weight-400);
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export default normalize;

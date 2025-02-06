@@ -1,10 +1,10 @@
 import { css } from "@emotion/react";
 
 const desktop = css`
-  /* grid-template-columns: repeat(3, 1fr); */
+  flex: 1 1 auto;
 
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 `;
 
