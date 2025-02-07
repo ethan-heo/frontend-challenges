@@ -1,6 +1,11 @@
 import { useSyncExternalStore } from "react";
 import { ProductItem } from "./useProductStore.hook";
 
+interface Cart {
+  activeConfirm: boolean;
+  orderItems: OrderItem[];
+}
+
 export interface OrderItem {
   productId: string;
   productName: string;
@@ -12,7 +17,10 @@ export interface OrderItem {
 type Listener = () => void;
 
 let listeners: Listener[] = [];
-let orderItems: OrderItem[] = [];
+let cart: Cart = {
+  activeConfirm: false,
+  orderItems: [],
+};
 
 const emitChange = () => {
   for (const listener of listeners) {
@@ -21,33 +29,49 @@ const emitChange = () => {
 };
 
 export const cartStore = {
+  toggleConfirm() {
+    cart = {
+      ...cart,
+      activeConfirm: !cart.activeConfirm,
+    };
+    emitChange();
+  },
   addOrderItem(productItem: ProductItem) {
-    orderItems = [
-      {
-        productId: productItem.id,
-        productName: productItem.name,
-        productPrice: productItem.price,
-        productQuantity: productItem.quantity,
-        productImage: productItem.image,
-      },
-      ...orderItems,
-    ];
+    cart = {
+      ...cart,
+      orderItems: [
+        {
+          productId: productItem.id,
+          productName: productItem.name,
+          productPrice: productItem.price,
+          productQuantity: productItem.quantity,
+          productImage: productItem.image,
+        },
+        ...cart.orderItems,
+      ],
+    };
 
     emitChange();
   },
   updateOrderItemQuantity(productId: string, productQuantity: number) {
-    orderItems = orderItems.map((orderItem) =>
-      orderItem.productId === productId
-        ? { ...orderItem, productQuantity }
-        : orderItem,
-    );
+    cart = {
+      ...cart,
+      orderItems: cart.orderItems.map((orderItem) =>
+        orderItem.productId === productId
+          ? { ...orderItem, productQuantity }
+          : orderItem,
+      ),
+    };
 
     emitChange();
   },
   removeOrderItem(productId: string) {
-    orderItems = orderItems.filter(
-      (orderItem) => orderItem.productId !== productId,
-    );
+    cart = {
+      ...cart,
+      orderItems: cart.orderItems.filter(
+        (orderItem) => orderItem.productId !== productId,
+      ),
+    };
 
     emitChange();
   },
@@ -59,23 +83,20 @@ export const cartStore = {
     };
   },
   getSnapshot() {
-    return orderItems;
+    return cart;
   },
 };
 
-function useCartStore<T extends (orderItems: OrderItem[]) => any>(
+function useCartStore<T extends (cart: Cart) => any>(
   selector: T,
 ): ReturnType<T>;
-function useCartStore(selector?: undefined): OrderItem[];
-function useCartStore<T extends (orderItems: OrderItem[]) => any>(
+function useCartStore(selector?: undefined): Cart;
+function useCartStore<T extends (cart: Cart) => any>(
   selector?: T,
 ): ReturnType<T> {
-  const orderItems = useSyncExternalStore(
-    cartStore.subscribe,
-    cartStore.getSnapshot,
-  );
+  const cart = useSyncExternalStore(cartStore.subscribe, cartStore.getSnapshot);
 
-  return selector ? selector(orderItems) : orderItems;
+  return selector ? selector(cart) : cart;
 }
 
 export default useCartStore;
