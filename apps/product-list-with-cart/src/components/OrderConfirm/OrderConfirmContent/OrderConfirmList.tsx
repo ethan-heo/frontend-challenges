@@ -3,7 +3,7 @@ import OrderConfirmItem from "./OrderConfirmItem";
 import styles from "./OrderConfirmList.styles";
 
 const OrderConfirmList: React.FC = () => {
-  const orderItems = useCartStore();
+  const orderItems = useCartStore((cart) => cart.orderItems);
 
   return (
     <ul css={styles}>

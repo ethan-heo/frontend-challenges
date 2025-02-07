@@ -3,7 +3,7 @@ import { productItemStore } from "../../../hooks/useProductStore.hook";
 import CartItem from "./CartItem";
 
 const CartList: React.FC = () => {
-  const orderItems = useCartStore();
+  const orderItems = useCartStore((cart) => cart.orderItems);
 
   return (
     <ul>

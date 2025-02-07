@@ -3,8 +3,8 @@ import transformPriceDecimal from "../../utils/transformPriceDecimal.util";
 import styles from "./CartTotal.styles";
 
 const CartTotal: React.FC = () => {
-  const totalPrice = useCartStore((orderItems) =>
-    orderItems.reduce(
+  const totalPrice = useCartStore((cart) =>
+    cart.orderItems.reduce(
       (acc, orderItem) =>
         acc + orderItem.productPrice * orderItem.productQuantity,
       0,

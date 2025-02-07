@@ -7,7 +7,7 @@ import CartList from "./CartList";
 import CartTotal from "./CartTotal";
 
 const Cart: React.FC = () => {
-  const productCount = useCartStore((orderItems) => orderItems.length);
+  const productCount = useCartStore((cart) => cart.orderItems.length);
 
   return (
     <div css={styles}>
