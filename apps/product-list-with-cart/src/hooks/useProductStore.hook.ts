@@ -50,27 +50,12 @@ export const productItemStore = {
 
     emitChange();
   },
-  increaseQuantity(id: string) {
+  updateProductItemQuantity(id: string, quantity: number) {
     productItems = productItems.map((productItem) =>
       productItem.id === id
         ? {
             ...productItem,
-            quantity: productItem.quantity + 1,
-          }
-        : productItem,
-    );
-
-    emitChange();
-  },
-  decreaseQuantity(id: string) {
-    productItems = productItems.map((productItem) =>
-      productItem.id === id
-        ? {
-            ...productItem,
-            quantity:
-              productItem.quantity - 1 > 0
-                ? productItem.quantity - 1
-                : productItem.quantity,
+            quantity,
           }
         : productItem,
     );
