@@ -1,3 +1,4 @@
+import useCartStore from "../../hooks/useCartStore.hook";
 import styles from "./Cart.styles";
 import CartAd from "./CartAd";
 import CartConfirmButton from "./CartConfirmButton";
@@ -6,7 +7,8 @@ import CartList from "./CartList";
 import CartTotal from "./CartTotal";
 
 const Cart: React.FC = () => {
-  const productCount = 0;
+  const productCount = useCartStore((orderItems) => orderItems.length);
+
   return (
     <div css={styles}>
       <h2>Your Cart ({productCount})</h2>
