@@ -256,7 +256,7 @@ Error generating stack: `+i.message+`
     }
 
     &__product {
-      padding: 20px;
+      padding: 20px 0;
       border-radius: 8px;
       background-color: var(--color-rose-100);
       margin-bottom: 28px;
@@ -272,8 +272,8 @@ Error generating stack: `+i.message+`
   border-top-right-radius: 12px;
 `,lh=te`
   background-color: var(--color-rose-50);
-
   border-radius: 12px;
+  min-width: 480px;
 `,ih=te`
   display: flex;
   align-items: center;
@@ -327,6 +327,9 @@ Error generating stack: `+i.message+`
   }
 `,oh=o=>se("li",{css:ih,children:[se("div",{className:"order-confirm-item__product",children:[se("picture",{className:"order-confirm-item__product__image",children:[M("source",{srcSet:o.productImage.mobile,media:Pn.mobile}),M("source",{srcSet:o.productImage.tablet,media:Pn.tablet}),M("source",{srcSet:o.productImage.desktop,media:Pn.desktop}),M("img",{src:o.productImage.thumbnail,alt:o.productName})]}),se("div",{className:"order-confirm-item__product__info",children:[M("strong",{className:"order-confirm-item__product__info__name",children:o.productName}),se("div",{children:[M("span",{className:"order-confirm-item__product__info__quantity",children:`${o.productQuantity}x`}),M("span",{className:"order-confirm-item__product__info__price",children:`@ $${Nn(o.productPrice)}`})]})]})]}),M("strong",{className:"order-confirm-item__total-price",children:`$${Nn(o.productPrice*o.productQuantity)}`})]}),uh=te`
   margin-bottom: 20px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 0 20px;
 
   li {
     padding-bottom: 16px;
@@ -339,6 +342,7 @@ Error generating stack: `+i.message+`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 
   .order-confirm-total {
     &__title {
