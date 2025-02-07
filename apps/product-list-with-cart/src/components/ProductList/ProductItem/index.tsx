@@ -51,7 +51,8 @@ const ProductItem: React.FC<ProductItem> = (productItem) => {
               );
             }}
             decrease={() => {
-              const decreasedQuantity = productItem.quantity - 1;
+              const decreasedQuantity =
+                productItem.quantity - 1 > 0 ? productItem.quantity - 1 : 1;
 
               productItemStore.updateProductItemQuantity(
                 productItem.id,

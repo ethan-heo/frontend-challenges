@@ -55,7 +55,7 @@ export const productItemStore = {
       productItem.id === id
         ? {
             ...productItem,
-            quantity: quantity > 0 ? quantity : 1,
+            quantity,
           }
         : productItem,
     );
