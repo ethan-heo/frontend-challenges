@@ -4,7 +4,9 @@ import common from "./ProductList.common.styles";
 import desktop from "./ProductList.desktop.styles";
 import mobile from "./ProductList.mobile.styles";
 import tablet from "./ProductList.tablet.styles";
-import useProductItemStore from "../../hooks/useProductStore.hook";
+import useProductItemStore, {
+  productItemStore,
+} from "../../hooks/useProductStore.hook";
 import { useEffect } from "react";
 
 const ProductList: React.FC = () => {
@@ -13,10 +15,10 @@ const ProductList: React.FC = () => {
     tablet,
     desktop,
   });
-  const { productItems, init } = useProductItemStore();
+  const productItems = useProductItemStore();
 
   useEffect(() => {
-    init();
+    productItemStore.init();
   }, []);
 
   return (
