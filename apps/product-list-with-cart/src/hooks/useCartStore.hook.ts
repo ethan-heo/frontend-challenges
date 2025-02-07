@@ -6,6 +6,7 @@ export interface OrderItem {
   productName: string;
   productQuantity: number;
   productPrice: number;
+  productImage: ProductItem["image"];
 }
 
 type Listener = () => void;
@@ -27,6 +28,7 @@ export const cartStore = {
         productName: productItem.name,
         productPrice: productItem.price,
         productQuantity: productItem.quantity,
+        productImage: productItem.image,
       },
       ...orderItems,
     ];
