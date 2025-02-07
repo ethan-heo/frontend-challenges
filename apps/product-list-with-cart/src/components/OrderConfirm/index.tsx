@@ -3,6 +3,7 @@ import common from "./OrderConfirm.common.styles";
 import desktop from "./OrderConfirm.desktop.styles";
 import mobile from "./OrderConfirm.mobile.styles";
 import tablet from "./OrderConfirm.tablet.styles";
+import OrderConfirmContent from "./OrderConfirmContent";
 
 const OrderConfirm: React.FC = () => {
   const style = useMediaQueryWithEmotion({
@@ -10,7 +11,11 @@ const OrderConfirm: React.FC = () => {
     tablet,
     desktop,
   });
-  return <div css={[common, style]}>OrderConfirm</div>;
+  return (
+    <div css={[common, style]}>
+      <OrderConfirmContent />
+    </div>
+  );
 };
 
 export default OrderConfirm;

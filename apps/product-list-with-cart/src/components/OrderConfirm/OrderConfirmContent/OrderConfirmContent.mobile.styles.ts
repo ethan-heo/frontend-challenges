@@ -1,8 +1,9 @@
 import { css } from "@emotion/react";
 
 const mobile = css`
-  justify-content: center;
-  align-items: flex-end;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 `;
 
 export default mobile;
