@@ -21,7 +21,7 @@ const common = css`
     }
 
     &__product {
-      padding: 20px;
+      padding: 20px 0;
       border-radius: 8px;
       background-color: var(--color-rose-100);
       margin-bottom: 28px;
