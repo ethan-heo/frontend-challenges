@@ -5,6 +5,7 @@ import {
   productItemStore,
   type ProductItem,
 } from "../../../hooks/useProductStore.hook";
+import { cartStore } from "../../../hooks/useCartStore.hook";
 
 const ProductItem: React.FC<ProductItem> = (productItem) => {
   return (
@@ -32,9 +33,34 @@ const ProductItem: React.FC<ProductItem> = (productItem) => {
           <AddToCartButton
             productItemQuantity={productItem.quantity}
             productItemSelected={productItem.selected}
-            select={() => productItemStore.selectProductItem(productItem.id)}
-            increase={() => productItemStore.increaseQuantity(productItem.id)}
-            decrease={() => productItemStore.decreaseQuantity(productItem.id)}
+            select={() => {
+              productItemStore.selectProductItem(productItem.id);
+              cartStore.addOrderItem(productItem);
+            }}
+            increase={() => {
+              const increasedQuantity = productItem.quantity + 1;
+
+              productItemStore.updateProductItemQuantity(
+                productItem.id,
+                increasedQuantity,
+              );
+              cartStore.updateOrderItemQuantity(
+                productItem.id,
+                increasedQuantity,
+              );
+            }}
+            decrease={() => {
+              const decreasedQuantity = productItem.quantity - 1;
+
+              productItemStore.updateProductItemQuantity(
+                productItem.id,
+                decreasedQuantity,
+              );
+              cartStore.updateOrderItemQuantity(
+                productItem.id,
+                decreasedQuantity,
+              );
+            }}
           />
         </div>
         <figcaption className="product-item__info">

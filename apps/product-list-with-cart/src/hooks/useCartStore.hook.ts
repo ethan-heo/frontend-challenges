@@ -21,12 +21,15 @@ const emitChange = () => {
 
 export const cartStore = {
   addOrderItem(productItem: ProductItem) {
-    orderItems.push({
-      productId: productItem.id,
-      productName: productItem.name,
-      productPrice: productItem.price,
-      productQuantity: productItem.quantity,
-    });
+    orderItems = [
+      {
+        productId: productItem.id,
+        productName: productItem.name,
+        productPrice: productItem.price,
+        productQuantity: productItem.quantity,
+      },
+      ...orderItems,
+    ];
 
     emitChange();
   },
