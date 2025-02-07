@@ -1,6 +1,7 @@
 import styles from "./CartItem.styles";
 import RemoveIcon from "../../../assets/images/icon-remove-item.svg?react";
 import { OrderItem } from "../../../hooks/useCartStore.hook";
+import transformPriceDecimal from "../../../utils/transformPriceDecimal.util";
 
 interface Props extends OrderItem {
   remove: () => void;
@@ -21,10 +22,10 @@ const CartItem: React.FC<Props> = ({
             {productQuantity}x
           </span>
           <span className="cart-item__product-info__price">
-            @{productPrice}
+            @{transformPriceDecimal(productPrice)}
           </span>
           <span className="cart-item__product-info__total-price">
-            ${productPrice * productQuantity}
+            ${transformPriceDecimal(productPrice * productQuantity)}
           </span>
         </div>
       </div>

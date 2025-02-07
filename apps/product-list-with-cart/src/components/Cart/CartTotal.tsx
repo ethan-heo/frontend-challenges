@@ -1,4 +1,5 @@
 import useCartStore from "../../hooks/useCartStore.hook";
+import transformPriceDecimal from "../../utils/transformPriceDecimal.util";
 import styles from "./CartTotal.styles";
 
 const CartTotal: React.FC = () => {
@@ -13,7 +14,9 @@ const CartTotal: React.FC = () => {
   return (
     <div css={styles}>
       <span className="cart-total__title">Order Total</span>
-      <span className="cart-total__price">${totalPrice}</span>
+      <span className="cart-total__price">
+        ${transformPriceDecimal(totalPrice)}
+      </span>
     </div>
   );
 };

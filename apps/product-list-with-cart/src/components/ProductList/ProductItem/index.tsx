@@ -6,6 +6,7 @@ import {
   type ProductItem,
 } from "../../../hooks/useProductStore.hook";
 import { cartStore } from "../../../hooks/useCartStore.hook";
+import transformPriceDecimal from "../../../utils/transformPriceDecimal.util";
 
 const ProductItem: React.FC<ProductItem> = (productItem) => {
   return (
@@ -70,7 +71,7 @@ const ProductItem: React.FC<ProductItem> = (productItem) => {
           <strong className="product-item__info__name">
             {productItem.name}
           </strong>
-          <span className="product-item__info__price">{`$${productItem.price}`}</span>
+          <span className="product-item__info__price">{`$${transformPriceDecimal(productItem.price)}`}</span>
         </figcaption>
       </figure>
     </li>
