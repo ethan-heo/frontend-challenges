@@ -12,7 +12,6 @@ const styles = css`
     font-size: 1.6rem;
     font-weight: var(--font-weight-600);
     color: var(--color-red);
-    min-width: 320px;
   }
 `;
 
