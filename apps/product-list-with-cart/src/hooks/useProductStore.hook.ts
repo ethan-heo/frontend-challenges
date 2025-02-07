@@ -30,7 +30,7 @@ const emitChange = () => {
   }
 };
 
-const productItemStore = {
+export const productItemStore = {
   async init() {
     const products = await new Promise<Product[]>((resolve) => resolve(data));
 
@@ -89,27 +89,19 @@ const productItemStore = {
   },
 };
 
-const useProductItemStore = () => {
+function useProductItemStore<T extends (productItems: ProductItem[]) => any>(
+  selector: T,
+): ReturnType<T>;
+function useProductItemStore(selector?: undefined): ProductItem[];
+function useProductItemStore<T extends (productItems: ProductItem[]) => any>(
+  selector?: T,
+): any {
   const productItems = useSyncExternalStore(
     productItemStore.subscribe,
     productItemStore.getSnapshot,
   );
 
-  return {
-    productItems,
-    init: () => {
-      productItemStore.init();
-    },
-    select: (id: string) => {
-      productItemStore.selectProductItem(id);
-    },
-    increase: (id: string) => {
-      productItemStore.increaseQuantity(id);
-    },
-    decrease: (id: string) => {
-      productItemStore.decreaseQuantity(id);
-    },
-  };
-};
+  return selector ? selector(productItems) : productItems;
+}
 
 export default useProductItemStore;
