@@ -1,26 +1,16 @@
 import AddToCartButton from "./AddToCartButton";
 import styles from "./ProductItem.styles";
 import { MEDIA_QUERY } from "../../../hooks/useMediaQuery.hook";
+import type { ProductItem } from "../../../hooks/useProductStore.hook";
 
-interface Props {
-  name: string;
-  category: string;
-  price: number;
-  image: {
-    thumbnail: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-  selected?: boolean;
-}
-
-const ProductItem: React.FC<Props> = ({
+const ProductItem: React.FC<ProductItem> = ({
+  id,
   name,
   category,
   price,
   image,
   selected,
+  quantity,
 }) => {
   return (
     <li css={styles}>
@@ -32,7 +22,11 @@ const ProductItem: React.FC<Props> = ({
             <source srcSet={image.desktop} media={MEDIA_QUERY.desktop} />
             <img src={image.thumbnail} alt={name} />
           </picture>
-          <AddToCartButton />
+          <AddToCartButton
+            productItemId={id}
+            productItemQuantity={quantity}
+            productItemSelected={selected}
+          />
         </div>
         <figcaption className="product-item__info">
           <span className="product-item__info__category">{category}</span>

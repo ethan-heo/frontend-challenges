@@ -4,7 +4,8 @@ import common from "./ProductList.common.styles";
 import desktop from "./ProductList.desktop.styles";
 import mobile from "./ProductList.mobile.styles";
 import tablet from "./ProductList.tablet.styles";
-import data from "../../data.json";
+import useProductItemStore from "../../hooks/useProductStore.hook";
+import { useEffect } from "react";
 
 const ProductList: React.FC = () => {
   const style = useMediaQueryWithEmotion({
@@ -12,10 +13,16 @@ const ProductList: React.FC = () => {
     tablet,
     desktop,
   });
+  const { productItems, init } = useProductItemStore();
+
+  useEffect(() => {
+    init();
+  }, []);
+
   return (
     <ul css={[common, style]}>
-      {data.map((product, idx) => (
-        <ProductItem key={`product-${idx}`} {...product} />
+      {productItems.map((productItem) => (
+        <ProductItem key={`product-${productItem.id}`} {...productItem} />
       ))}
     </ul>
   );
