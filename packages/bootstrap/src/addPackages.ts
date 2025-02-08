@@ -9,6 +9,13 @@ const addPackages = async (path: string) => {
   const pkg = JSON.parse(content);
 
   pkg.devDependencies["vite-plugin-move-dist-files"] = "workspace:*";
+  pkg["challenge"] = {
+    name: pkg.name,
+    description: "",
+    source: "",
+    sourceLink: "",
+    skills: [],
+  };
 
   fs.writeFileSync(
     PKG_PATH,
