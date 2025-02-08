@@ -1,12 +1,12 @@
 import { PropsWithChildren } from "react";
 import common from "./Section.common.styles";
-import useMediaQueryWithEmotion from "../../../hooks/useMediaQuery.hook";
 import mobile from "./Section.mobile.styles";
 import tablet from "./Section.tablet.styles";
 import desktop from "./Section.desktop.styles";
+import useMediaQuery from "use-media-query";
 
 const Section: React.FC<PropsWithChildren> = ({ children }) => {
-  const style = useMediaQueryWithEmotion({
+  const style = useMediaQuery({
     mobile,
     tablet,
     desktop,

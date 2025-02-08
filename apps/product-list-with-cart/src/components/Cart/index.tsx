@@ -1,5 +1,5 @@
+import useMediaQuery from "use-media-query";
 import useCartStore from "../../hooks/useCartStore.hook";
-import useMediaQueryWithEmotion from "../../hooks/useMediaQuery.hook";
 import common from "./Cart.common.styles";
 import desktop from "./Cart.desktop.styles";
 import CartAd from "./CartAd";
@@ -9,7 +9,7 @@ import CartList from "./CartList";
 import CartTotal from "./CartTotal";
 
 const Cart: React.FC = () => {
-  const styles = useMediaQueryWithEmotion({
+  const styles = useMediaQuery({
     desktop,
   });
   const productCount = useCartStore((cart) => cart.orderItems.length);

@@ -1,4 +1,3 @@
-import useMediaQueryWithEmotion from "../../hooks/useMediaQuery.hook";
 import ProductItem from "./ProductItem";
 import common from "./ProductList.common.styles";
 import desktop from "./ProductList.desktop.styles";
@@ -8,9 +7,10 @@ import useProductItemStore, {
   productItemStore,
 } from "../../hooks/useProductStore.hook";
 import { useEffect } from "react";
+import useMediaQuery from "use-media-query";
 
 const ProductList: React.FC = () => {
-  const style = useMediaQueryWithEmotion({
+  const style = useMediaQuery({
     mobile,
     tablet,
     desktop,

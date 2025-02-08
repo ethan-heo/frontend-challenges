@@ -1,5 +1,4 @@
 import CheckIcon from "../../../assets/images/icon-order-confirmed.svg?react";
-import useMediaQueryWithEmotion from "../../../hooks/useMediaQuery.hook";
 import common from "./OrderConfirmContent.common.styles";
 import mobile from "./OrderConfirmContent.mobile.styles";
 import tablet from "./OrderConfirmContent.tablet.styles";
@@ -7,9 +6,10 @@ import desktop from "./OrderConfirmContent.desktop.styles";
 import OrderConfirmList from "./OrderConfirmList";
 import OrderConfirmTotalPrice from "./OrderConfirmTotalPrice";
 import OrderConfirmButton from "./OrderConfirmButton";
+import useMediaQuery from "use-media-query";
 
 const OrderConfirmContent: React.FC = () => {
-  const styles = useMediaQueryWithEmotion({
+  const styles = useMediaQuery({
     mobile,
     tablet,
     desktop,
