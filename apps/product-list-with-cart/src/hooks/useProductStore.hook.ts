@@ -41,6 +41,15 @@ export const productItemStore = {
     }));
     emitChange();
   },
+  resetProductItems() {
+    productItems = productItems.map((productItem) => ({
+      ...productItem,
+      quantity: 1,
+      selected: false,
+    }));
+
+    emitChange();
+  },
   selectProductItem(id: string) {
     productItems = productItems.map((productItem) =>
       productItem.id === id

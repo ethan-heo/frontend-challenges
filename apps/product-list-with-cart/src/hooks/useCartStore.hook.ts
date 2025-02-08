@@ -29,6 +29,14 @@ const emitChange = () => {
 };
 
 export const cartStore = {
+  clearOrderItems() {
+    cart = {
+      ...cart,
+      orderItems: [],
+    };
+
+    emitChange();
+  },
   toggleConfirm() {
     cart = {
       ...cart,
