@@ -1,12 +1,12 @@
 import AddToCartButton from "./AddToCartButton";
 import styles from "./ProductItem.styles";
-import { MEDIA_QUERY } from "../../../hooks/useMediaQuery.hook";
 import {
   productItemStore,
   type ProductItem,
 } from "../../../hooks/useProductStore.hook";
 import { cartStore } from "../../../hooks/useCartStore.hook";
 import transformPriceDecimal from "../../../utils/transformPriceDecimal.util";
+import { getMediaQuery } from "use-media-query";
 
 const ProductItem: React.FC<ProductItem> = (productItem) => {
   return (
@@ -19,15 +19,15 @@ const ProductItem: React.FC<ProductItem> = (productItem) => {
           <picture>
             <source
               srcSet={productItem.image.mobile}
-              media={MEDIA_QUERY.mobile}
+              media={getMediaQuery("mobile")}
             />
             <source
               srcSet={productItem.image.tablet}
-              media={MEDIA_QUERY.tablet}
+              media={getMediaQuery("tablet")}
             />
             <source
               srcSet={productItem.image.desktop}
-              media={MEDIA_QUERY.desktop}
+              media={getMediaQuery("desktop")}
             />
             <img src={productItem.image.thumbnail} alt={productItem.name} />
           </picture>

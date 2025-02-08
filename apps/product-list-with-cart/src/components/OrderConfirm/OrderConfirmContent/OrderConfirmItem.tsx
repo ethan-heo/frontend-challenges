@@ -1,5 +1,5 @@
+import { getMediaQuery } from "use-media-query";
 import { OrderItem } from "../../../hooks/useCartStore.hook";
-import { MEDIA_QUERY } from "../../../hooks/useMediaQuery.hook";
 import transformPriceDecimal from "../../../utils/transformPriceDecimal.util";
 import styles from "./OrderConfirmItem.styles";
 
@@ -10,15 +10,15 @@ const OrderConfirmItem: React.FC<OrderItem> = (orderItem) => {
         <picture className="order-confirm-item__product__image">
           <source
             srcSet={orderItem.productImage.mobile}
-            media={MEDIA_QUERY.mobile}
+            media={getMediaQuery("mobile")}
           />
           <source
             srcSet={orderItem.productImage.tablet}
-            media={MEDIA_QUERY.tablet}
+            media={getMediaQuery("tablet")}
           />
           <source
             srcSet={orderItem.productImage.desktop}
-            media={MEDIA_QUERY.desktop}
+            media={getMediaQuery("desktop")}
           />
           <img
             src={orderItem.productImage.thumbnail}
