@@ -1,19 +1,11 @@
-import Comment from "./components/Comment";
 import CommentAdd from "./components/CommentAdd";
-import CommentNesting from "./components/CommentNesting";
+import CommentContainer from "./components/CommentContainer";
 import Main from "./components/layouts/Main";
 
 function App() {
   return (
     <Main>
-      <CommentNesting>
-        <Comment />
-        <Comment />
-        <CommentNesting>
-          <Comment />
-          <Comment />
-        </CommentNesting>
-      </CommentNesting>
+      <CommentContainer />
       <CommentAdd />
     </Main>
   );
