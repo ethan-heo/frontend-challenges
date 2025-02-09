@@ -21,6 +21,7 @@ const normalize = css`
     font-family: "Rubik", serif;
     font-size: var(--font-size);
     font-weight: var(--font-weight-400);
+    background-color: var(--color-very-light-gray);
   }
 `;
 
