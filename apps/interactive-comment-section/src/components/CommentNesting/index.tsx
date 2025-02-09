@@ -1,5 +1,15 @@
+import useMediaQuery from "use-media-query";
+import mobile from "./CommentNesting.mobile.styles";
+import tablet from "./CommentNesting.tablet.styles";
+import desktop from "./CommentNesting.desktop.styles";
+
 const CommentNesting: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <ul>{children}</ul>;
+  const styles = useMediaQuery({
+    mobile,
+    tablet,
+    desktop,
+  });
+  return <ul css={styles}>{children}</ul>;
 };
 
 export default CommentNesting;

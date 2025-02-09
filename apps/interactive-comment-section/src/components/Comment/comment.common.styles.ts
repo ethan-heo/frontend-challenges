@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 
 const common = css`
   display: grid;
+  background-color: var(--color-white);
 
   .comment-score {
     grid-area: score;
@@ -51,6 +52,7 @@ const common = css`
   .comment-content {
     grid-area: content;
     color: var(--color-grayish-blue);
+    word-break: keep-all;
 
     &__nickname {
       color: var(--color-moderate-blue);

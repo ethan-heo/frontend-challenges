@@ -44,10 +44,10 @@ const Comment: React.FC = () => {
         reprehenderit.
       </p>
       <div className="comment-utils">
-        <button className="comment-utils__reply" aria-label="reply comment">
+        {/* <button className="comment-utils__reply" aria-label="reply comment">
           <ReplayIcon />
           <span>Reply</span>
-        </button>
+        </button> */}
         <button className="comment-utils__delete" aria-label="delete comment">
           <DeleteIcon />
           <span>Delete</span>

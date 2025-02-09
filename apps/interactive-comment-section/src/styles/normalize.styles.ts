@@ -23,6 +23,10 @@ const normalize = css`
     font-weight: var(--font-weight-400);
     background-color: var(--color-very-light-gray);
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export default normalize;
