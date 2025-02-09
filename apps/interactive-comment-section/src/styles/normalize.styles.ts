@@ -27,6 +27,10 @@ const normalize = css`
   * {
     box-sizing: border-box;
   }
+
+  button {
+    background-color: initial;
+  }
 `;
 
 export default normalize;
