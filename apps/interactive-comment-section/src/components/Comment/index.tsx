@@ -4,10 +4,10 @@ import DeleteIcon from "../../assets/images/icon-delete.svg?react";
 import EditIcon from "../../assets/images/icon-edit.svg?react";
 import ReplayIcon from "../../assets/images/icon-reply.svg?react";
 import useMediaQuery from "use-media-query";
-import mobile from "./comment.mobile.styles";
-import tablet from "./comment.tablet.styles";
-import desktop from "./comment.desktop.styles";
-import common from "./comment.common.styles";
+import mobile from "./Comment.mobile.styles";
+import tablet from "./Comment.tablet.styles";
+import desktop from "./Comment.desktop.styles";
+import common from "./Comment.common.styles";
 
 const Comment: React.FC = () => {
   const styles = useMediaQuery({
