@@ -5,7 +5,7 @@ const mobile = css`
     margin-top: 12px;
   }
 
-  & > ul {
+  & > li > ul {
     padding-left: 12px;
     margin-top: 12px;
     border-left: 2px solid var(--color-light-gray);

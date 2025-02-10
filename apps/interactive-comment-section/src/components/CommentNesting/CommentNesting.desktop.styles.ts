@@ -5,7 +5,7 @@ const desktop = css`
     margin-top: 20px;
   }
 
-  & > ul {
+  & > li > ul {
     padding-left: 20px;
     margin-top: 20px;
     border-left: 2px solid var(--color-light-gray);

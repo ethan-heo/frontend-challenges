@@ -5,7 +5,7 @@ const tablet = css`
     margin-top: 16px;
   }
 
-  & > ul {
+  & > li > ul {
     padding-left: 16px;
     margin-top: 16px;
     border-left: 2px solid var(--color-light-gray);
