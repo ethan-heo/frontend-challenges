@@ -13,8 +13,8 @@ const desktop = css`
     flex-direction: column;
     align-items: center;
     align-self: self-start;
-    padding: 12px;
-    gap: 16px;
+    padding: 8px;
+    gap: 8px;
   }
 `;
 

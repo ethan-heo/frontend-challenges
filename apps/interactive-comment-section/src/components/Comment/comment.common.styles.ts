@@ -9,7 +9,6 @@ const common = css`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
     background-color: var(--color-light-gray);
     border-radius: 8px;
     padding: 8px 12px;
@@ -18,6 +17,8 @@ const common = css`
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 16px;
+      height: 16px;
     }
 
     &__count {
