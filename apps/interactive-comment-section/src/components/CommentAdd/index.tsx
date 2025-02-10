@@ -19,7 +19,7 @@ const CommentAdd: React.FC = () => {
         placeholder="Add a comment..."
       />
       <picture className="comment-add__user-icon">
-        <source src={user?.image?.webp} />
+        <source srcSet={user?.image?.webp} />
         <img src={user?.image?.png} alt={user?.username} />
       </picture>
       <button className="comment-add__send-btn" aria-label="send comment">

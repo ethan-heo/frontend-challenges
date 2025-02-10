@@ -35,7 +35,7 @@ const Comment: React.FC<(Comment | RepliedComment) & { isMe?: boolean }> = (
       </div>
       <div className="comment-user">
         <picture className="comment-user__icon">
-          <source src={commentInfo.user.image.webp} />
+          <source srcSet={commentInfo.user.image.webp} />
           <img
             src={commentInfo.user.image.png}
             alt={commentInfo.user.username}
