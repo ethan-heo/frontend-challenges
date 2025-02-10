@@ -27,6 +27,7 @@ const Comment: React.FC<
     tablet: tablet,
     desktop: desktop,
   });
+  const isReply = "replyingTo" in commentInfo;
 
   const handleToggleReply = () => {
     setActiveReply(!activeReply);
@@ -79,7 +80,16 @@ const Comment: React.FC<
               <button
                 className="comment-utils__delete"
                 aria-label="delete comment"
-                onClick={() => commentModule.delete(commentInfo.id)}
+                onClick={() => {
+                  if (isReply) {
+                    commentModule.deleteReply(
+                      commentInfo.parentCommentId,
+                      commentInfo.id,
+                    );
+                  } else {
+                    commentModule.deleteComment(commentInfo.id);
+                  }
+                }}
               >
                 <DeleteIcon />
                 <span>Delete</span>

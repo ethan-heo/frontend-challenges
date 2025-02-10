@@ -85,8 +85,20 @@ export const commentModule = {
 
     emitChange();
   },
-  delete(id: number) {
+  deleteComment(id: number) {
     comments = comments.filter((comment) => comment.id !== id);
+
+    emitChange();
+  },
+  deleteReply(commentId: number, replyId: number) {
+    comments = comments.map((comment) =>
+      comment.id === commentId
+        ? {
+            ...comment,
+            replies: comment.replies.filter((reply) => reply.id !== replyId),
+          }
+        : comment,
+    );
 
     emitChange();
   },
