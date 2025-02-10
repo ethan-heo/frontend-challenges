@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 const mobile = css`
-  margin-top: 12px;
+  margin-top: 6px;
   padding: 12px;
   gap: 12px;
   grid-template-areas:

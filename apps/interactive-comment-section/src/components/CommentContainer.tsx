@@ -18,12 +18,20 @@ const CommentContainer: React.FC = () => {
     <CommentNesting>
       {comments.map((comment) => (
         <li key={`comment-${comment.id}`}>
-          <Comment {...comment} isMe={checkMe(comment)} />
+          <Comment
+            {...comment}
+            isMe={checkMe(comment)}
+            parentCommentId={comment.id}
+          />
           {comment.replies.length > 0 && (
             <CommentNesting>
               {comment.replies.map((reply) => (
                 <li key={`reply-${reply.id}`}>
-                  <Comment {...reply} isMe={checkMe(reply)} />
+                  <Comment
+                    {...reply}
+                    isMe={checkMe(reply)}
+                    parentCommentId={comment.id}
+                  />
                 </li>
               ))}
             </CommentNesting>

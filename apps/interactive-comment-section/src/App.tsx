@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import CommentAdd from "./components/CommentAdd";
 import CommentContainer from "./components/CommentContainer";
 import Main from "./components/layouts/Main";
-import { userModule } from "./hooks/useUserStore.hook";
+import useUserStore, { userModule } from "./hooks/useUserStore.hook";
 import { commentModule } from "./hooks/useCommentsStore.hook";
 
 function App() {
+  const user = useUserStore();
+
   useEffect(() => {
     userModule.init();
     commentModule.init();
@@ -13,7 +15,9 @@ function App() {
   return (
     <Main>
       <CommentContainer />
-      <CommentAdd />
+      <CommentAdd
+        addComment={(content) => commentModule.addComment({ content, user })}
+      />
     </Main>
   );
 }

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 const desktop = css`
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 20px;
   gap: 20px;
   grid-template-areas: "user-icon textarea send-btn";

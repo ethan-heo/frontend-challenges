@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 const tablet = css`
-  margin-top: 16px;
+  margin-top: 8px;
   padding: 16px;
   gap: 16px;
   grid-template-areas:
