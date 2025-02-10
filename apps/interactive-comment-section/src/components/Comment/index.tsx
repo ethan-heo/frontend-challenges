@@ -8,8 +8,14 @@ import mobile from "./Comment.mobile.styles";
 import tablet from "./Comment.tablet.styles";
 import desktop from "./Comment.desktop.styles";
 import common from "./Comment.common.styles";
+import type {
+  Comment,
+  RepliedComment,
+} from "../../hooks/useCommentsStore.hook";
 
-const Comment: React.FC = () => {
+const Comment: React.FC<(Comment | RepliedComment) & { isMe?: boolean }> = (
+  commentInfo,
+) => {
   const styles = useMediaQuery({
     mobile: mobile,
     tablet: tablet,
@@ -22,40 +28,45 @@ const Comment: React.FC = () => {
         <button aria-label="plus score">
           <PlusIcon />
         </button>
-        <span className="comment-score__count">{`12`}</span>
+        <span className="comment-score__count">{commentInfo.score}</span>
         <button aria-label="minus score">
           <MinusIcon />
         </button>
       </div>
       <div className="comment-user">
         <img className="comment-user__icon" src="" alt="아이콘" />
-        <div className="comment-user__me">you</div>
-        <span className="comment-user__dates">created dates</span>
+        {commentInfo.isMe && <div className="comment-user__me">you</div>}
+        <span className="comment-user__dates">{commentInfo.createdAt}</span>
       </div>
       <p className="comment-content">
-        <span className="comment-content__nickname">@nickname</span>
-        Aliqua nisi magna laboris excepteur id duis aliquip. Et exercitation
-        officia aute amet esse veniam ea magna cupidatat commodo labore aute. Ad
-        esse nulla mollit ipsum consectetur incididunt. Ipsum ipsum occaecat
-        veniam sunt cillum sit officia Lorem ea commodo officia commodo. Anim
-        veniam ut eiusmod eiusmod. Qui dolor officia Lorem excepteur veniam
-        culpa voluptate culpa voluptate eu duis laborum eu qui. Dolor anim
-        labore cupidatat est proident minim elit dolor mollit ullamco ut
-        reprehenderit.
+        {(commentInfo as RepliedComment).replyingTo && (
+          <span className="comment-content__nickname">
+            {`@${(commentInfo as RepliedComment).replyingTo}`}
+          </span>
+        )}
+        {commentInfo.content}
       </p>
       <div className="comment-utils">
-        {/* <button className="comment-utils__reply" aria-label="reply comment">
-          <ReplayIcon />
-          <span>Reply</span>
-        </button> */}
-        <button className="comment-utils__delete" aria-label="delete comment">
-          <DeleteIcon />
-          <span>Delete</span>
-        </button>
-        <button className="comment-utils__edit" aria-label="edit comment">
-          <EditIcon />
-          <span>Edit</span>
-        </button>
+        {commentInfo.isMe ? (
+          <>
+            <button
+              className="comment-utils__delete"
+              aria-label="delete comment"
+            >
+              <DeleteIcon />
+              <span>Delete</span>
+            </button>
+            <button className="comment-utils__edit" aria-label="edit comment">
+              <EditIcon />
+              <span>Edit</span>
+            </button>
+          </>
+        ) : (
+          <button className="comment-utils__reply" aria-label="reply comment">
+            <ReplayIcon />
+            <span>Reply</span>
+          </button>
+        )}
       </div>
     </div>
   );
