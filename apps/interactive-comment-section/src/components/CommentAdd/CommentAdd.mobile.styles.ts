@@ -8,7 +8,7 @@ const mobile = css`
     "textarea textarea textarea textarea"
     "user-icon _ _ send-btn";
 
-  .comment-add__user-icon {
+  .comment-add__user-icon > img {
     width: 36px;
     height: 36px;
   }

@@ -19,7 +19,10 @@ const common = css`
     justify-self: self-start;
     display: block;
     width: fit-content;
-    border-radius: 100%;
+
+    & > img {
+      border-radius: 100%;
+    }
   }
   .comment-add__send-btn {
     grid-area: send-btn;

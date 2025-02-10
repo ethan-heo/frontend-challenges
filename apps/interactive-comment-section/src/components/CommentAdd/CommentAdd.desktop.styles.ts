@@ -8,7 +8,7 @@ const desktop = css`
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto;
 
-  .comment-add__user-icon {
+  .comment-add__user-icon > img {
     width: 48px;
     height: 48px;
   }
