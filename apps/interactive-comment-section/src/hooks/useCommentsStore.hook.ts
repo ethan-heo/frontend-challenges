@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { User } from "./useUserStore.hook";
+import data from "../assets/data.json";
 
 export interface RepliedComment {
   id: number;
@@ -34,6 +35,10 @@ const emitChange = () => {
 };
 
 const commentModule = {
+  async init() {
+    comments = await new Promise((resolve) => resolve(data.comments));
+    emitChange();
+  },
   updateScore(id: number, score: number) {
     comments = comments.map((comment) =>
       comment.id === id
@@ -45,7 +50,7 @@ const commentModule = {
     );
     emitChange();
   },
-  reply(commentId: number, replyComment: ReplyComment) {
+  addReply(commentId: number, replyComment: ReplyComment) {
     comments = comments.map((comment) =>
       comment.id === commentId
         ? {
@@ -64,7 +69,7 @@ const commentModule = {
     );
     emitChange();
   },
-  add(comment: AddComment) {
+  addComment(comment: AddComment) {
     comments = [
       ...comments,
       {
