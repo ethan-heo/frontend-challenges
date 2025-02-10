@@ -32,10 +32,10 @@ const common = css`
     gap: 12px;
     align-items: center;
 
-    &__icon {
+    &__icon > img {
       display: block;
-      width: 24px;
-      height: 24px;
+      width: 36px;
+      height: 36px;
       border-radius: 100%;
     }
     &__me {

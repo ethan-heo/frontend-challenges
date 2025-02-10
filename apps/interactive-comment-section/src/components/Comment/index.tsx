@@ -34,7 +34,13 @@ const Comment: React.FC<(Comment | RepliedComment) & { isMe?: boolean }> = (
         </button>
       </div>
       <div className="comment-user">
-        <img className="comment-user__icon" src="" alt="아이콘" />
+        <picture className="comment-user__icon">
+          <source src={commentInfo.user.image.webp} />
+          <img
+            src={commentInfo.user.image.png}
+            alt={commentInfo.user.username}
+          />
+        </picture>
         {commentInfo.isMe && <div className="comment-user__me">you</div>}
         <span className="comment-user__dates">{commentInfo.createdAt}</span>
       </div>
