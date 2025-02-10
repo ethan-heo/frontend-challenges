@@ -16,7 +16,7 @@ const emitChange = () => {
   listeners.forEach((listener) => listener());
 };
 
-const commentModule = {
+export const userModule = {
   async init() {
     user = await new Promise((resolve) => resolve(data.currentUser));
 
@@ -42,8 +42,8 @@ function useUserStore<T extends (user?: User) => any>(
   selector?: T,
 ): ReturnType<T> {
   const user = useSyncExternalStore(
-    commentModule.subscribe,
-    commentModule.getSnapshot,
+    userModule.subscribe,
+    userModule.getSnapshot,
   );
 
   return selector ? selector(user) : user;
