@@ -34,7 +34,7 @@ const emitChange = () => {
   listeners.forEach((listener) => listener());
 };
 
-const commentModule = {
+export const commentModule = {
   async init() {
     comments = await new Promise((resolve) => resolve(data.comments));
     emitChange();
