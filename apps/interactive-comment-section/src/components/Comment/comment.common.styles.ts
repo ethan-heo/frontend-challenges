@@ -54,10 +54,34 @@ const common = css`
     color: var(--color-grayish-blue);
     word-break: keep-all;
 
+    &[data-editable="true"] {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
     &__nickname {
       color: var(--color-moderate-blue);
       font-weight: var(--font-weight-700);
       margin-right: 8px;
+    }
+
+    &__textarea {
+      width: 100%;
+      min-height: 80px;
+      border: 1px solid var(--color-light-gray);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    &__update-btn {
+      padding: 12px 24px;
+      color: var(--color-white);
+      background-color: var(--color-moderate-blue);
+      font-size: 1.1rem;
+      width: fit-content;
+      border-radius: 8px;
+      margin-top: 12px;
     }
   }
 

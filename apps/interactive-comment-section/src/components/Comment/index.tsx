@@ -13,7 +13,7 @@ import {
   type Comment,
   type RepliedComment,
 } from "../../hooks/useCommentsStore.hook";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CommentAdd from "../CommentAdd";
 import useUserStore from "../../hooks/useUserStore.hook";
 
@@ -21,6 +21,8 @@ const Comment: React.FC<
   (Comment | RepliedComment) & { isMe?: boolean; parentCommentId: number }
 > = (commentInfo) => {
   const [activeReply, setActiveReply] = useState(false);
+  const [activeEdit, setActiveEdit] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const user = useUserStore();
   const styles = useMediaQuery({
     mobile: mobile,
@@ -31,6 +33,9 @@ const Comment: React.FC<
 
   const handleToggleReply = () => {
     setActiveReply(!activeReply);
+  };
+  const handleToggleEdit = () => {
+    setActiveEdit(!activeEdit);
   };
 
   return (
@@ -66,14 +71,39 @@ const Comment: React.FC<
           {commentInfo.isMe && <div className="comment-user__me">you</div>}
           <span className="comment-user__dates">{commentInfo.createdAt}</span>
         </div>
-        <p className="comment-content">
-          {(commentInfo as RepliedComment).replyingTo && (
-            <span className="comment-content__nickname">
-              {`@${(commentInfo as RepliedComment).replyingTo}`}
-            </span>
-          )}
-          {commentInfo.content}
-        </p>
+        {activeEdit ? (
+          <div className="comment-content" data-editable={activeEdit}>
+            <textarea
+              ref={textareaRef}
+              className="comment-content__textarea"
+              defaultValue={`@${(commentInfo as RepliedComment).replyingTo} ${commentInfo.content}`}
+              aria-label="Edit your comment"
+            />
+            <button
+              className="comment-content__update-btn"
+              onClick={() => {
+                commentModule.editReply(
+                  commentInfo.parentCommentId,
+                  commentInfo.id,
+                  textareaRef.current!.value,
+                );
+                handleToggleEdit();
+              }}
+            >
+              UPDATE
+            </button>
+          </div>
+        ) : (
+          <p className="comment-content">
+            {(commentInfo as RepliedComment).replyingTo && (
+              <span className="comment-content__nickname">
+                {`@${(commentInfo as RepliedComment).replyingTo}`}
+              </span>
+            )}
+            {commentInfo.content}
+          </p>
+        )}
+
         <div className="comment-utils">
           {commentInfo.isMe ? (
             <>
@@ -94,7 +124,11 @@ const Comment: React.FC<
                 <DeleteIcon />
                 <span>Delete</span>
               </button>
-              <button className="comment-utils__edit" aria-label="edit comment">
+              <button
+                className="comment-utils__edit"
+                aria-label="edit comment"
+                onClick={handleToggleEdit}
+              >
                 <EditIcon />
                 <span>Edit</span>
               </button>

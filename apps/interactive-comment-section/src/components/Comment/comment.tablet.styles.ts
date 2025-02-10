@@ -7,6 +7,10 @@ const tablet = css`
     "user user user user"
     "content content content content"
     "score _ _ utils";
+
+  .comment-score {
+    width: 100px;
+  }
 `;
 
 export default tablet;
