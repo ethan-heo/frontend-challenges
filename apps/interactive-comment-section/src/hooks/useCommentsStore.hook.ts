@@ -39,12 +39,25 @@ export const commentModule = {
     comments = await new Promise((resolve) => resolve(data.comments));
     emitChange();
   },
-  updateScore(id: number, score: number) {
+  updateCommentScore(id: number, score: number) {
     comments = comments.map((comment) =>
       comment.id === id
         ? {
             ...comment,
             score,
+          }
+        : comment,
+    );
+    emitChange();
+  },
+  updateReplyScore(commentId: number, replyId: number, score: number) {
+    comments = comments.map((comment) =>
+      comment.id === commentId
+        ? {
+            ...comment,
+            replies: comment.replies.map((reply) =>
+              reply.id === replyId ? { ...reply, score } : reply,
+            ),
           }
         : comment,
     );

@@ -37,6 +37,17 @@ const Comment: React.FC<
   const handleToggleEdit = () => {
     setActiveEdit(!activeEdit);
   };
+  const handleUpdateScore = (score: number) => {
+    if (isReply) {
+      commentModule.updateReplyScore(
+        commentInfo.parentCommentId,
+        commentInfo.id,
+        score,
+      );
+    } else {
+      commentModule.updateCommentScore(commentInfo.id, score);
+    }
+  };
 
   return (
     <>
@@ -44,18 +55,14 @@ const Comment: React.FC<
         <div className="comment-score">
           <button
             aria-label="plus score"
-            onClick={() =>
-              commentModule.updateScore(commentInfo.id, commentInfo.score + 1)
-            }
+            onClick={() => handleUpdateScore(commentInfo.score + 1)}
           >
             <PlusIcon />
           </button>
           <span className="comment-score__count">{commentInfo.score}</span>
           <button
             aria-label="minus score"
-            onClick={() =>
-              commentModule.updateScore(commentInfo.id, commentInfo.score - 1)
-            }
+            onClick={() => handleUpdateScore(commentInfo.score - 1)}
           >
             <MinusIcon />
           </button>
