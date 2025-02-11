@@ -9,61 +9,35 @@ import tablet from "./Comment.tablet.styles";
 import desktop from "./Comment.desktop.styles";
 import common from "./Comment.common.styles";
 import {
-  commentModule,
   type Comment,
   type RepliedComment,
 } from "../../hooks/useCommentsStore.hook";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import CommentAdd from "../CommentAdd";
 import useUserStore from "../../hooks/useUserStore.hook";
+import useComment from "./Comment.hook";
 
 const Comment: React.FC<
   (Comment | RepliedComment) & { isMe?: boolean; parentCommentId: number }
 > = (commentInfo) => {
-  const [activeReply, setActiveReply] = useState(false);
-  const [activeEdit, setActiveEdit] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const user = useUserStore();
+  const comment = useComment({ ...commentInfo, user });
   const styles = useMediaQuery({
     mobile: mobile,
     tablet: tablet,
     desktop: desktop,
   });
-  const isReply = "replyingTo" in commentInfo;
-
-  const handleToggleReply = () => {
-    setActiveReply(!activeReply);
-  };
-  const handleToggleEdit = () => {
-    setActiveEdit(!activeEdit);
-  };
-  const handleUpdateScore = (score: number) => {
-    if (isReply) {
-      commentModule.updateReplyScore(
-        commentInfo.parentCommentId,
-        commentInfo.id,
-        score,
-      );
-    } else {
-      commentModule.updateCommentScore(commentInfo.id, score);
-    }
-  };
 
   return (
     <>
       <div css={[common, styles]}>
         <div className="comment-score">
-          <button
-            aria-label="plus score"
-            onClick={() => handleUpdateScore(commentInfo.score + 1)}
-          >
+          <button aria-label="plus score" onClick={comment.increaseScore}>
             <PlusIcon />
           </button>
           <span className="comment-score__count">{commentInfo.score}</span>
-          <button
-            aria-label="minus score"
-            onClick={() => handleUpdateScore(commentInfo.score - 1)}
-          >
+          <button aria-label="minus score" onClick={comment.decreaseScore}>
             <MinusIcon />
           </button>
         </div>
@@ -78,8 +52,8 @@ const Comment: React.FC<
           {commentInfo.isMe && <div className="comment-user__me">you</div>}
           <span className="comment-user__dates">{commentInfo.createdAt}</span>
         </div>
-        {activeEdit ? (
-          <div className="comment-content" data-editable={activeEdit}>
+        {comment.activeEdit ? (
+          <div className="comment-content" data-editable={comment.activeEdit}>
             <textarea
               ref={textareaRef}
               className="comment-content__textarea"
@@ -88,14 +62,7 @@ const Comment: React.FC<
             />
             <button
               className="comment-content__update-btn"
-              onClick={() => {
-                commentModule.editReply(
-                  commentInfo.parentCommentId,
-                  commentInfo.id,
-                  textareaRef.current!.value,
-                );
-                handleToggleEdit();
-              }}
+              onClick={() => comment.editComment(textareaRef.current!.value)}
             >
               UPDATE
             </button>
@@ -117,16 +84,7 @@ const Comment: React.FC<
               <button
                 className="comment-utils__delete"
                 aria-label="delete comment"
-                onClick={() => {
-                  if (isReply) {
-                    commentModule.deleteReply(
-                      commentInfo.parentCommentId,
-                      commentInfo.id,
-                    );
-                  } else {
-                    commentModule.deleteComment(commentInfo.id);
-                  }
-                }}
+                onClick={() => comment.deleteComment()}
               >
                 <DeleteIcon />
                 <span>Delete</span>
@@ -134,7 +92,7 @@ const Comment: React.FC<
               <button
                 className="comment-utils__edit"
                 aria-label="edit comment"
-                onClick={handleToggleEdit}
+                onClick={() => comment.toggleEdit()}
               >
                 <EditIcon />
                 <span>Edit</span>
@@ -144,7 +102,7 @@ const Comment: React.FC<
             <button
               className="comment-utils__reply"
               aria-label="reply comment"
-              onClick={handleToggleReply}
+              onClick={() => comment.toggleReply()}
             >
               <ReplayIcon />
               <span>Reply</span>
@@ -152,16 +110,9 @@ const Comment: React.FC<
           )}
         </div>
       </div>
-      {activeReply && (
+      {comment.activeReply && (
         <CommentAdd
-          addComment={(content) => {
-            commentModule.addReply(commentInfo.parentCommentId, {
-              content,
-              user,
-              replyingTo: commentInfo.user.username,
-            });
-            handleToggleReply();
-          }}
+          addComment={(content) => comment.addComment(content)}
           defaultValue={`@${commentInfo.user.username} `}
         />
       )}

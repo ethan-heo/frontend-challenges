@@ -81,7 +81,6 @@ export const commentModule = {
         : comment,
     );
 
-    console.log(comments, commentId, replyComment);
     emitChange();
   },
   addComment(comment: AddComment) {
