@@ -22,6 +22,7 @@ const CommentAdd: React.FC<Props> = ({ addComment, defaultValue }) => {
 
   const handleAddComment = () => {
     addComment(ref.current!.value);
+    ref.current!.value = "";
   };
 
   return (
