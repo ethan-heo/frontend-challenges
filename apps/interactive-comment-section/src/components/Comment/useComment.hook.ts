@@ -68,11 +68,22 @@ const useComment = (state: State) => {
     },
     editComment: (content: string) => {
       if (isReply) {
-        commentModule.editReply(state.parentCommentId, state.id, content);
+        commentModule.editReply(
+          state.parentCommentId,
+          state.id,
+          content.replace(`@${state.replyingTo}`, ""),
+        );
       } else {
         commentModule.editComment((state as State).id, content);
       }
       handleToggleEdit();
+    },
+    getEditDefaultValue: () => {
+      if (isReply) {
+        return `@${state.replyingTo} ${state.content}`;
+      } else {
+        return state.content;
+      }
     },
   };
 };

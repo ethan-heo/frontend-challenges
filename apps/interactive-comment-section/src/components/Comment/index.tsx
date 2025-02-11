@@ -15,7 +15,7 @@ import {
 import { useRef } from "react";
 import CommentAdd from "../CommentAdd";
 import useUserStore from "../../hooks/useUserStore.hook";
-import useComment from "./Comment.hook";
+import useComment from "./useComment.hook";
 
 const Comment: React.FC<
   (Comment | RepliedComment) & { isMe?: boolean; parentCommentId: number }
@@ -49,6 +49,9 @@ const Comment: React.FC<
               alt={commentInfo.user.username}
             />
           </picture>
+          <span className="comment-user__name">
+            {commentInfo.user.username}
+          </span>
           {commentInfo.isMe && <div className="comment-user__me">you</div>}
           <span className="comment-user__dates">{commentInfo.createdAt}</span>
         </div>
@@ -57,7 +60,7 @@ const Comment: React.FC<
             <textarea
               ref={textareaRef}
               className="comment-content__textarea"
-              defaultValue={`@${(commentInfo as RepliedComment).replyingTo} ${commentInfo.content}`}
+              defaultValue={comment.getEditDefaultValue()}
               aria-label="Edit your comment"
             />
             <button
