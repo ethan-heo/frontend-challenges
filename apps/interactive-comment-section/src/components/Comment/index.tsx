@@ -14,15 +14,13 @@ import {
 } from "../../hooks/useCommentsStore.hook";
 import { useRef } from "react";
 import CommentAdd from "../CommentAdd";
-import useUserStore from "../../hooks/useUserStore.hook";
 import useComment from "./useComment.hook";
 
 const Comment: React.FC<
   (Comment | RepliedComment) & { isMe?: boolean; parentCommentId: number }
 > = (commentInfo) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const user = useUserStore();
-  const comment = useComment({ ...commentInfo, user });
+  const comment = useComment({ ...commentInfo });
   const styles = useMediaQuery({
     mobile: mobile,
     tablet: tablet,

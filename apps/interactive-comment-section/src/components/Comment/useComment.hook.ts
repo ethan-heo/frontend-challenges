@@ -4,7 +4,7 @@ import {
   commentModule,
   RepliedComment,
 } from "../../hooks/useCommentsStore.hook";
-import { User } from "../../hooks/useUserStore.hook";
+import useUserStore, { User } from "../../hooks/useUserStore.hook";
 
 type State = (Comment | RepliedComment) & {
   replyingTo?: string;
@@ -15,6 +15,7 @@ type State = (Comment | RepliedComment) & {
 const useComment = (state: State) => {
   const [activeReply, setActiveReply] = useState(false);
   const [activeEdit, setActiveEdit] = useState(false);
+  const user = useUserStore();
   const isReply = "replyingTo" in state;
 
   const handleToggleReply = () => {
@@ -60,8 +61,8 @@ const useComment = (state: State) => {
     },
     addComment: (content: string) => {
       commentModule.addReply(state.parentCommentId, {
-        content,
-        user: state.user,
+        content: content.replace(`@${state.user.username} `, ""),
+        user,
         replyingTo: state.user.username,
       });
       handleToggleReply();
@@ -71,7 +72,7 @@ const useComment = (state: State) => {
         commentModule.editReply(
           state.parentCommentId,
           state.id,
-          content.replace(`@${state.replyingTo}`, ""),
+          content.replace(`@${state.replyingTo} `, ""),
         );
       } else {
         commentModule.editComment((state as State).id, content);
