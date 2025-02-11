@@ -33,6 +33,10 @@ const common = css`
     font-size: 1.1rem;
     width: fit-content;
     border-radius: 8px;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
 

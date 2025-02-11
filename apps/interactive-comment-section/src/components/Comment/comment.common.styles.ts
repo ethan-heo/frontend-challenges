@@ -19,6 +19,10 @@ const common = css`
       justify-content: center;
       width: 16px;
       height: 16px;
+
+      &:hover path {
+        fill: var(--color-moderate-blue);
+      }
     }
 
     &__count {
@@ -83,6 +87,10 @@ const common = css`
       width: fit-content;
       border-radius: 8px;
       margin-top: 12px;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -97,6 +105,10 @@ const common = css`
       display: flex;
       align-items: center;
       gap: 8px;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     &__reply {
