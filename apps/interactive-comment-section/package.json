@@ -12,7 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "use-media-query": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
@@ -28,7 +29,6 @@
     "vite": "^6.1.0",
     "vite-plugin-move-dist-files": "workspace:*",
     "vite-plugin-svgr": "^4.3.0",
-    "use-media-query": "workspace:*",
     "styles": "workspace:*"
   },
   "challenge": {
