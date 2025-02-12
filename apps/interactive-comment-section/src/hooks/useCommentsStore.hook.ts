@@ -26,7 +26,7 @@ type AddComment = Omit<Comment, "id" | "createdAt" | "replies" | "score">;
 
 let listeners: (() => void)[] = [];
 let comments: Comment[] = [];
-const createId = () => (Math.floor(Math.random()) + 1) * 10000;
+const createId = () => Math.floor(Math.random() * 10000);
 const createDates = () => Date.now();
 const storage = {
   set(comments: Comment[]) {
