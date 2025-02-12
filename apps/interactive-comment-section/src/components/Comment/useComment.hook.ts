@@ -5,6 +5,7 @@ import {
   RepliedComment,
 } from "../../hooks/useCommentsStore.hook";
 import useUserStore, { User } from "../../hooks/useUserStore.hook";
+import { AppModule } from "../../hooks/useAppStore.hook";
 
 type State = (Comment | RepliedComment) & {
   replyingTo?: string;
@@ -54,9 +55,12 @@ const useComment = (state: State) => {
     },
     deleteComment: () => {
       if (isReply) {
-        commentModule.deleteReply(state.parentCommentId, state.id);
+        AppModule.toggleDeleteModal({
+          parentCommentId: state.parentCommentId,
+          commentId: state.id,
+        });
       } else {
-        commentModule.deleteComment(state.id);
+        AppModule.toggleDeleteModal({ commentId: state.id });
       }
     },
     addComment: (content: string) => {

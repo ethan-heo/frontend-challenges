@@ -5,6 +5,7 @@ import { registerMediaQuery } from "use-media-query";
 import "styles/reset.css";
 import { Global } from "@emotion/react";
 import normalize from "./styles/normalize.styles.ts";
+import DeleteModal from "./components/DeleteModal/index.tsx";
 
 registerMediaQuery("mobile", "(max-width: 480px)");
 registerMediaQuery("tablet", "(min-width: 481px) and (max-width: 1024px)");
@@ -14,5 +15,6 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Global styles={normalize} />
     <App />
+    <DeleteModal />
   </StrictMode>,
 );
