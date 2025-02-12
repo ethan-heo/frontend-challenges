@@ -9,8 +9,10 @@ function App() {
   const user = useUserStore();
 
   useEffect(() => {
-    userModule.init();
-    commentModule.init();
+    (async () => {
+      await userModule.init();
+      await commentModule.init();
+    })();
   }, []);
   return (
     <Main>

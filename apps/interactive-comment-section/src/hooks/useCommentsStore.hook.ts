@@ -26,9 +26,18 @@ type AddComment = Omit<Comment, "id" | "createdAt" | "replies" | "score">;
 
 let listeners: (() => void)[] = [];
 let comments: Comment[] = [];
-let id = 4;
-const createId = () => ++id;
+const createId = () => (Math.floor(Math.random()) + 1) * 10000;
 const createDates = () => "5 second ago";
+const storage = {
+  set(comments: Comment[]) {
+    localStorage.setItem("comments", JSON.stringify(comments));
+  },
+  get() {
+    const data = localStorage.getItem("comments");
+
+    return data ? (JSON.parse(data) as Comment[]) : null;
+  },
+};
 
 const emitChange = () => {
   listeners.forEach((listener) => listener());
@@ -36,7 +45,19 @@ const emitChange = () => {
 
 export const commentModule = {
   async init() {
-    comments = await new Promise((resolve) => resolve(data.comments));
+    const savedComments = storage.get();
+
+    if (!savedComments) {
+      const _comments = await new Promise<Comment[]>((resolve) =>
+        resolve(data.comments),
+      );
+
+      storage.set(_comments);
+      comments = _comments;
+    } else {
+      comments = savedComments;
+    }
+
     emitChange();
   },
   updateCommentScore(id: number, score: number) {
@@ -48,6 +69,8 @@ export const commentModule = {
           }
         : comment,
     );
+
+    storage.set(comments);
     emitChange();
   },
   updateReplyScore(commentId: number, replyId: number, score: number) {
@@ -61,6 +84,7 @@ export const commentModule = {
           }
         : comment,
     );
+    storage.set(comments);
     emitChange();
   },
   addReply(commentId: number, replyComment: ReplyComment) {
@@ -81,6 +105,7 @@ export const commentModule = {
         : comment,
     );
 
+    storage.set(comments);
     emitChange();
   },
   addComment(comment: AddComment) {
@@ -95,11 +120,13 @@ export const commentModule = {
       },
     ];
 
+    storage.set(comments);
     emitChange();
   },
   deleteComment(id: number) {
     comments = comments.filter((comment) => comment.id !== id);
 
+    storage.set(comments);
     emitChange();
   },
   deleteReply(commentId: number, replyId: number) {
@@ -112,6 +139,7 @@ export const commentModule = {
         : comment,
     );
 
+    storage.set(comments);
     emitChange();
   },
   editComment(id: number, content: string) {
@@ -124,6 +152,7 @@ export const commentModule = {
         : comment,
     );
 
+    storage.set(comments);
     emitChange();
   },
   editReply(commentId: number, replyId: number, content: string) {
@@ -138,7 +167,7 @@ export const commentModule = {
     }
 
     comments = [...comments];
-
+    storage.set(comments);
     emitChange();
   },
   subscribe(listener: () => void) {
