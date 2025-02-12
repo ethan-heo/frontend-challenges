@@ -5,7 +5,7 @@ import data from "../assets/data.json";
 export interface RepliedComment {
   id: number;
   content: string;
-  createdAt: string;
+  createdAt: number;
   score: number;
   replyingTo: string;
   user: User;
@@ -14,7 +14,7 @@ export interface RepliedComment {
 export interface Comment {
   id: number;
   content: string;
-  createdAt: string;
+  createdAt: number;
   score: number;
   user: User;
   replies: RepliedComment[];
@@ -27,7 +27,7 @@ type AddComment = Omit<Comment, "id" | "createdAt" | "replies" | "score">;
 let listeners: (() => void)[] = [];
 let comments: Comment[] = [];
 const createId = () => (Math.floor(Math.random()) + 1) * 10000;
-const createDates = () => "5 second ago";
+const createDates = () => Date.now();
 const storage = {
   set(comments: Comment[]) {
     localStorage.setItem("comments", JSON.stringify(comments));

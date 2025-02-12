@@ -90,6 +90,34 @@ const useComment = (state: State) => {
         return state.content;
       }
     },
+    getTime: (createdAt: number) => {
+      const diffTime = (time: number, unit: number) => Math.floor(time / unit);
+      const TIME_UNIT_MAP = {
+        0: "seconds",
+        1: "minutes",
+        2: "hours",
+        3: "days",
+        4: "weeks",
+        5: "months",
+        6: "years",
+      };
+      const DIFF_UNITS = [60, 60, 24, 7, 4, 12];
+      let timeUnit = 0;
+      let value = diffTime(Date.now() - createdAt, 1000);
+
+      for (let idx = 0, diff = value; idx < DIFF_UNITS.length; idx++) {
+        diff = diffTime(diff, DIFF_UNITS[idx]);
+        timeUnit = idx;
+
+        if (diff === 0) {
+          break;
+        }
+
+        value = diff;
+      }
+
+      return `${value} ${TIME_UNIT_MAP[timeUnit as keyof typeof TIME_UNIT_MAP]} ago`;
+    },
   };
 };
 

@@ -51,7 +51,12 @@ const Comment: React.FC<
             {commentInfo.user.username}
           </span>
           {commentInfo.isMe && <div className="comment-user__me">you</div>}
-          <span className="comment-user__dates">{commentInfo.createdAt}</span>
+          <time
+            className="comment-user__dates"
+            dateTime={new Date(commentInfo.createdAt).toISOString()}
+          >
+            {comment.getTime(commentInfo.createdAt)}
+          </time>
         </div>
         {comment.activeEdit ? (
           <div className="comment-content" data-editable={comment.activeEdit}>
