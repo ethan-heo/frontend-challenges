@@ -4,6 +4,7 @@
     "build": "rm -f -r ./docs && turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "test": "turbo run test",
     "create:challenge": "bootstrap"
   },
   "devDependencies": {
