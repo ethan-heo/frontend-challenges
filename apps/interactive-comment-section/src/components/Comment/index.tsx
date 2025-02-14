@@ -8,16 +8,16 @@ import mobile from "./Comment.mobile.styles";
 import tablet from "./Comment.tablet.styles";
 import desktop from "./Comment.desktop.styles";
 import common from "./Comment.common.styles";
-import {
-  type Comment,
-  type RepliedComment,
+import type {
+  Comment as CommentType,
+  RepliedComment,
 } from "../../hooks/useCommentsStore.hook";
 import { useRef } from "react";
 import CommentAdd from "../CommentAdd";
 import useComment from "./useComment.hook";
 
 const Comment: React.FC<
-  (Comment | RepliedComment) & { isMe?: boolean; parentCommentId: number }
+  (CommentType | RepliedComment) & { isMe?: boolean; parentCommentId: number }
 > = (commentInfo) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const comment = useComment({ ...commentInfo });
