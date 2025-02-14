@@ -49,6 +49,9 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: Release
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Publish GitHub Pages
         uses: actions/deploy-pages@v4
