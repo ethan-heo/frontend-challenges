@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon-32x32.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conference ticket generator</title>
+    <meta name="description" content="Generate conference tickets" />
+    <link
+      rel="stylesheet"
+      href="data:text/css;base64,LmhlYWRlciB7CiAgcGFkZGluZzogMzVweCAwIDQ1cHg7Cn0KCm1haW4gewogIGZvbnQtc2l6ZTogMnJlbTsKICBwYWRkaW5nOiAwIDIwcHg7Cn0KCi5kZXNjX19tYWluIHsKICBtYXJnaW4tYm90dG9tOiAyNHB4OwogIHBhZGRpbmc6IDAgMjBweDsKICBmb250LXNpemU6IDEuNnJlbTsKfQoKLmRlc2NfX3N1YiB7CiAgbWFyZ2luLWJvdHRvbTogMzZweDsKICBwYWRkaW5nOiAwIDIwcHg7CiAgZm9udC1zaXplOiAxLjRyZW07Cn0KCi5yZWdpc3Rlci1mb3JtIHsKICBtYXJnaW4tYm90dG9tOiA4MHB4OwogIGdhcDogMjRweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2xhYmVsIHsKICBtYXJnaW4tYm90dG9tOiAxNnB4OwogIGZvbnQtc2l6ZTogMS4ycmVtOwp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWQgewogIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgcGFkZGluZzogMjBweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19pY29uIHsKICB3aWR0aDogNDJweDsKICBoZWlnaHQ6IDQycHg7CiAgYm9yZGVyLXJhZGl1czogOHB4OwogIG1hcmdpbjogMCBhdXRvIDE0cHg7Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX3VwbG9hZF9faWNvbiBpbWcgewogIGJvcmRlci1yYWRpdXM6IDhweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19ndWlkZSB7CiAgZm9udC1zaXplOiAwLjlyZW07Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX25vdGljZSBpbWcgewogIHdpZHRoOiAxNnB4OwogIGhlaWdodDogMTZweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX25hbWUgaW5wdXRbdHlwZT0idGV4dCJdLAoucmVnaXN0ZXItZm9ybV9fZW1haWwgaW5wdXRbdHlwZT0idGV4dCJdLAoucmVnaXN0ZXItZm9ybV9fZ2l0aHViLXVzZXJuYW1lIGlucHV0W3R5cGU9InRleHQiXSB7CiAgcGFkZGluZzogMTBweCAxNHB4OwogIGJvcmRlci1yYWRpdXM6IDhweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX3N1Ym1pdCBidXR0b24gewogIHBhZGRpbmc6IDIwcHg7CiAgYm9yZGVyLXJhZGl1czogMTJweDsKICBmb250LXNpemU6IDEuMTVyZW07Cn0KCi5yZWdpc3Rlci1mb3JtX19tZXNzYWdlLAoucmVnaXN0ZXItZm9ybV9fbWVzc2FnZS0tZXJyb3IgewogIGdhcDogNHB4OwogIGZvbnQtc2l6ZTogMC42cmVtOwogIG1hcmdpbi10b3A6IDEwcHg7Cn0K"
+      media="screen and (max-width: 480px)"
+    />
+    <link
+      rel="stylesheet"
+      href="data:text/css;base64,LmhlYWRlciB7CiAgcGFkZGluZzogNDVweCAwIDU1cHg7Cn0KCm1haW4gewogIHBhZGRpbmc6IDAgMjBweDsKfQoKLmRlc2NfX21haW4gewogIG1hcmdpbi1ib3R0b206IDI0cHg7CiAgZm9udC1zaXplOiAzLjJyZW07Cn0KCi5kZXNjX19zdWIgewogIG1hcmdpbi1ib3R0b206IDM2cHg7Cn0KCi5yZWdpc3Rlci1mb3JtIHsKICBnYXA6IDI0cHg7CiAgbWF4LXdpZHRoOiA0NDBweDsKICBtYXJnaW46IDAgYXV0byA4MHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fbGFiZWwgewogIG1hcmdpbi1ib3R0b206IDE2cHg7Cn0KCi5yZWdpc3Rlci1mb3JtX19hdmF0YXJfX3VwbG9hZCB7CiAgYm9yZGVyLXJhZGl1czogMTJweDsKICBwYWRkaW5nOiAxNnB4Owp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWRfX2ljb24gewogIHdpZHRoOiA0MnB4OwogIGhlaWdodDogNDJweDsKICBib3JkZXItcmFkaXVzOiA4cHg7CiAgbWFyZ2luOiAwIGF1dG8gMTRweDsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fdXBsb2FkX19pY29uIGltZyB7CiAgYm9yZGVyLXJhZGl1czogOHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fYXZhdGFyX191cGxvYWRfX2d1aWRlIHsKICBmb250LXNpemU6IDAuOXJlbTsKfQoKLnJlZ2lzdGVyLWZvcm1fX2F2YXRhcl9fbm90aWNlIGltZyB7CiAgd2lkdGg6IDE2cHg7CiAgaGVpZ2h0OiAxNnB4Owp9CgoucmVnaXN0ZXItZm9ybV9fbmFtZSBpbnB1dFt0eXBlPSJ0ZXh0Il0sCi5yZWdpc3Rlci1mb3JtX19lbWFpbCBpbnB1dFt0eXBlPSJ0ZXh0Il0sCi5yZWdpc3Rlci1mb3JtX19naXRodWItdXNlcm5hbWUgaW5wdXRbdHlwZT0idGV4dCJdIHsKICBwYWRkaW5nOiAxMHB4IDE0cHg7CiAgYm9yZGVyLXJhZGl1czogOHB4Owp9CgoucmVnaXN0ZXItZm9ybV9fc3VibWl0IGJ1dHRvbiB7CiAgcGFkZGluZzogMjBweDsKICBib3JkZXItcmFkaXVzOiAxMnB4OwogIGZvbnQtc2l6ZTogMS4xNXJlbTsKfQoKLnJlZ2lzdGVyLWZvcm1fX21lc3NhZ2UsCi5yZWdpc3Rlci1mb3JtX19tZXNzYWdlLS1lcnJvciB7CiAgZ2FwOiA0cHg7CiAgZm9udC1zaXplOiAwLjhyZW07CiAgbWFyZ2luLXRvcDogMTBweDsKfQo="
+      media="screen and (min-width: 481px)"
+    />
+    <script type="module" crossorigin src="/frontend-challenges/projects/conference-ticket-generator/assets/index-DOYkEbAR.js"></script>
+    <link rel="modulepreload" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/normalize-DfVQnlV7.js">
+    <link rel="stylesheet" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/normalize-DVJDNZn5.css">
+    <link rel="stylesheet" crossorigin href="/frontend-challenges/projects/conference-ticket-generator/assets/index-BzvrI73o.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>
+        <img src="/frontend-challenges/projects/conference-ticket-generator/assets/logo-full-BX2U3u4u.svg" alt="coding conf" />
+      </h1>
+    </header>
+    <main>
+      <p class="desc__main">
+        Your Journey to Coding Conf <br />
+        2025 Starts Here!
+      </p>
+      <p class="desc__sub">
+        Secure your spot at next year's biggest coding conference.
+      </p>
+      <form class="register-form">
+        <div class="register-form__avatar">
+          <div class="register-form__label">Upload Avatar</div>
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            accept="image/*"
+            aria-required="true"
+          />
+          <label
+            class="register-form__avatar__upload"
+            tabindex="0"
+            for="avatar"
+            onkeyup="if(event.keyCode === 13) document.querySelector('#avatar').click()"
+          >
+            <div class="register-form__avatar__upload__icon">
+              <div></div>
+            </div>
+            <p class="register-form__avatar__upload__guide">
+              Drag and drop or click to upload
+            </p>
+            <div class="register-form__avatar__upload__btn-group">
+              <button
+                type="button"
+                class="register-form__avatar__upload__btn--remove"
+              >
+                Remove image
+              </button>
+              <button
+                type="button"
+                class="register-form__avatar__upload__btn--change"
+              >
+                Change image
+              </button>
+            </div>
+          </label>
+          <p class="register-form__message">
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%23D1D0D5'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23D1D0D5'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%23D1D0D5'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e" alt="upload notice" />
+            Upload your photo (JPG or PNG, max size: 5MB)
+          </p>
+          <p
+            class="register-form__message--error"
+            data-code="invalid-avatar-img-type"
+          >
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+
+            Invalid file type. Please upload a JPG or PNG
+          </p>
+          <p
+            class="register-form__message--error"
+            data-code="invalid-avatar-size"
+          >
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            File too large. Please upload a photo under 500KB
+          </p>
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
+        </div>
+        <div class="register-form__name">
+          <label class="register-form__label" for="name">Full Name</label>
+          <input type="text" id="name" name="name" aria-required="true" />
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
+        </div>
+        <div class="register-form__email">
+          <label class="register-form__label" for="email">Email Address</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            aria-required="true"
+          />
+          <p class="register-form__message--error" data-code="invalid-email">
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            Please enter a valid email address
+          </p>
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
+        </div>
+        <div class="register-form__github-username">
+          <label class="register-form__label" for="github-username"
+            >Github Username</label
+          >
+          <input
+            type="text"
+            id="github-username"
+            name="github-username"
+            placeholder="@youtusername"
+            aria-required="true"
+          />
+          <p class="register-form__message--error" data-code="required">
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M2%208a6%206%200%201%200%2012%200A6%206%200%200%200%202%208Z'/%3e%3cpath%20fill='%23e16151'%20d='M8.004%2010.462V7.596ZM8%205.57v-.042Z'/%3e%3cpath%20stroke='%20%23e16151'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M8.004%2010.462V7.596M8%205.569v-.042'/%3e%3c/svg%3e"
+              alt="upload notice error"
+            />
+            This field is required
+          </p>
+        </div>
+        <div class="register-form__submit">
+          <button type="submit">Generate My Ticket</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
