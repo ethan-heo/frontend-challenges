@@ -41,14 +41,14 @@ jobs:
           git commit -m "chore: Release Challenge"
           git push origin HEAD
 
-  Deploy:
-    runs-on: ubuntu-latest
-    needs: Release
-    steps:
-      - name: Deploy to GitHub Pages
+      - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
 
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: Release
+    steps:
       - name: Publish GitHub Pages
         uses: actions/deploy-pages@v4
