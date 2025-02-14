@@ -9,10 +9,11 @@
     "source": "Frontend Mentor",
     "sourceLink": "https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d",
     "skills": [
-      "html",
-      "css",
-      "react",
-      "typescript"
+      "HTML5",
+      "CSS3",
+      "React",
+      "TypeScript",
+      "Vite"
     ]
   },
   "scripts": {
