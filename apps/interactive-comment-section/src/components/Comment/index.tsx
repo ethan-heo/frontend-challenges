@@ -22,9 +22,9 @@ const Comment: React.FC<
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const comment = useComment({ ...commentInfo });
   const styles = useMediaQuery({
-    mobile: mobile,
-    tablet: tablet,
-    desktop: desktop,
+    mobile,
+    tablet,
+    desktop,
   });
 
   return (
