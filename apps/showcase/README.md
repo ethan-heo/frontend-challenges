@@ -18,8 +18,6 @@
 
 ## 프로젝트 구조
 
-기능 중심의 폴더 구조
-
 ```bash
 /dist      # 빌드된 파일
 /public    # 정적 리소스 (favicon, robots.txt 등)
