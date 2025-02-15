@@ -1,30 +1,43 @@
-# Frontend Mentor - Bento grid solution
+## 프로젝트 개요
 
-This is a solution to the [Bento grid challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/bento-grid-RMydElrlOj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+- 이름: bento-grid
+- 목적: Bento UI 사이트 개발
+- 작업 기간: 2일
+- 목표:
+  - [x] 시맨틱 태그 사용
+  - [x] 반응형 사이트 제작 (mobile, tablet desktop)
+  - [x] Grid layout을 사용
+- 사용자: 본인
+- 핵심 기능 및 주요 특징
+  - link 태그의 media 속성을 활용한 플랫폼별 CSS 파일 분리
+  - BEM 방법론 사용
+  - 반응형 사이트 제작을 위해 CSS Grid 속성 사용
 
-## Table of contents
+## 기술 스택
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-- [Author](#author)
+- 주요 기술: HTML5, CSS3
+- 번들러: Vite
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## 프로젝트 구조
 
-## Overview
+```bash
+/dist      # 빌드된 파일
+/public    # 정적 리소스 (favicon, robots.txt 등)
+/src       # 개발 코드
+  ├── assets/     # 이미지, 아이콘, 폰트 등 정적 파일
+index.html
+```
 
-### The challenge
+## 개발 환경
 
-Users should be able to:
+- Vanilla 프론트엔드 환경
+- 실행
+  ```bash
+  pnpm --filter=bento-grid dev
+  ```
 
-- View the optimal layout for the interface depending on their device's screen size
+## UI/UX 디자인
 
-### Links
-
-- Solution URL: [Add solution URL here](https://github.com/ethan-heo/frontend-challenges/tree/master/apps/bento-grid)
-- Live Site URL: [Add live site URL here](https://ethan-heo.github.io/frontend-challenges/projects/bento-grid/)
-
-## Author
-
-- github - [link](https://github.com/ethan-heo/)
-- Frontend Mentor - [link](https://www.frontendmentor.io/profile/ethan-heo)
+- FrontendMentor 에서 제공한 [스타일 가이드](./guide/style-guide.md) 사용
+- 반응형 디자인 적용 (Mobile, Tablet, Desktop)
+- Grid Layout 사용
