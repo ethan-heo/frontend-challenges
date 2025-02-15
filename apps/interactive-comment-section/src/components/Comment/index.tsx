@@ -27,6 +27,8 @@ const Comment: React.FC<
     desktop,
   });
 
+  console.log("test");
+
   return (
     <>
       <div css={[common, styles]}>
