@@ -45,27 +45,30 @@
 
 ## 배포 및 운영
 
-- 빌드 파일 구성
-  - docs/projects/[PROJECT_NAME] 디렉토리 내 각 챌린지의 빌드 파일을 구성
-  - 각 프로젝트의 vite.config 파일에 [vite-plugin-move-dist-files](./packages/vite-plugin-move-dist-files/) 플러그인을 사용하여 빌드 결과물을 docs/projects로 이관하도록 구성
-- Branch 전략
+### 빌드 파일 구성
 
-  ```mermaid
-  gitGraph
-    commit id: "Init"
-    branch master
-    commit id: "Feature Merged to Master"
-    checkout master
-    commit id: "CI Github Actions Triggered"
+- docs/projects/[PROJECT_NAME] 디렉토리 내 각 챌린지의 빌드 파일을 구성
+- [vite-plugin-move-dist-files](./packages/vite-plugin-move-dist-files/) 플러그인을 사용하여 빌드 결과물을 docs/projects로 이관하도록 구성
 
-    branch release
-    commit id: "Pull Request Merged to Release"
-    checkout release
-    commit id: "Release Github Actions Triggered"
-    commit id: "Build Code"
-    commit id: "Commit Build to Release Branch"
-    commit id: "Deploy to GitHub Pages"
-  ```
+### Branch 전략
 
-- 배포
-  - release 브랜치에 PR 머지 후 github action을 통해 github pages에 배포
+```mermaid
+gitGraph
+  commit id: "Init"
+  branch master
+  commit id: "Feature Merged to Master"
+  checkout master
+  commit id: "CI Github Actions Triggered"
+
+  branch release
+  commit id: "Pull Request Merged to Release"
+  checkout release
+  commit id: "Release Github Actions Triggered"
+  commit id: "Build Code"
+  commit id: "Commit Build to Release Branch"
+  commit id: "Deploy to GitHub Pages"
+```
+
+### 배포
+
+- release 브랜치에 PR 머지 후 github action을 통해 github pages에 배포
