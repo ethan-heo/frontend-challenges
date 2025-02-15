@@ -2,6 +2,7 @@
 
 - 이름: conference-ticket-generator
 - 목적: 유저 정보를 바탕으로 컨퍼런스 티켓을 생성하는 웹 서비스 개발
+- 작업 기간: 2일
 - 목표:
   - [x] 시맨틱 태그 사용
   - [x] 반응형 사이트 제작 (mobile, desktop)
@@ -32,6 +33,8 @@
   ├── assets/     # 이미지, 아이콘, 폰트 등 정적 파일
   ├── scripts/    # 기능별 스크립트 파일
   ├── styles/     # 페이지별 스타일 디렉토리
+ticket.html
+index.html
 ```
 
 ## 개발 환경
