@@ -1,9 +1,8 @@
 ## 프로젝트 개요
 
 - 이름: Showcase
-- 목적: 챌린지 프로젝트를 한데 모아 보여줄 수 있도록 제작
-- 목표:
-  - 다양한 프론트엔드 기술 및 패턴을 기록
+- 목적: 챌린지 프로젝트 소개
+- 목표: 캘린지 프로젝트의 내용을 어느 플랫폼에서도 볼 수 있도록 제작
 - 사용자: 본인
 - 핵심 기능 및 주요 특징
   - 프로젝트들의 메타 정보를 수집하여 챌린지 정보를 제공(설명, 기술 스택, 원본 소스)
@@ -14,7 +13,7 @@
 - 라이브러리: React, TypeScript
 - UI 라이브러리: @ethan-heo/styles (기본적인 스타일링을 위한 테마별 토큰을 제공)
 - 번들러: Vite
-- 보조 도구: ESLint, Prettier, vite-plugin-svgr, vite-plugin-move-dist-files
+- 보조 도구: ESLint, Prettier, vite-plugin-svgr, vite-plugin-move-dist-files(workspace)
 
 ## 프로젝트 구조
 
