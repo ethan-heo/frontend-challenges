@@ -54,15 +54,14 @@
 
 ```mermaid
 gitGraph
-  commit id: "Init"
   branch master
+  commit id: "Init"
   commit id: "Feature Merged to Master"
-  checkout master
   commit id: "CI Github Actions Triggered"
 
   branch release
-  commit id: "Pull Request Merged to Release"
   checkout release
+  commit id: "Pull Request Merged to Release"
   commit id: "Release Github Actions Triggered"
   commit id: "Build Code"
   commit id: "Commit Build to Release Branch"
