@@ -7,13 +7,23 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/use-media-query.react.js",
+      "types": "./dist/use-media-query.react.d.ts"
+    },
+    "./svelte": {
+      "import": "./dist/use-media-query.svelte.js",
+      "types": "./dist/use-media-query.svelte.d.ts"
     }
   },
   "scripts": {
     "build": "tsc --project tsconfig.json"
   },
   "devDependencies": {
+    "@tsconfig/svelte": "^5.0.4",
     "@types/react": "^18.3.18",
+    "svelte": "^5.20.1",
     "typescript": "~5.7.2"
   },
   "dependencies": {
