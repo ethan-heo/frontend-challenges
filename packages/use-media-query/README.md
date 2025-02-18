@@ -4,7 +4,7 @@
 
 ### Usage
 
-### 0. React, Svelte 지원
+#### 0. React, Svelte 지원
 
 ```typescript
 import useMediaQuery "use-media-query/react";
