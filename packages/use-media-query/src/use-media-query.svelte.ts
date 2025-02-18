@@ -43,7 +43,7 @@ function useMediaQuery(styleMap: DefaultMediaQuery["args"] = {}) {
     });
   });
 
-  return { style };
+  return style;
 }
 
 export default useMediaQuery;
