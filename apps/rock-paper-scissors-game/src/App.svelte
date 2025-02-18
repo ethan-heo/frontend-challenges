@@ -5,7 +5,7 @@
   import desktop from "./App.desktop.styles";
   import Header from "./components/Header/Header.svelte";
 
-  const { style } = useMediaQuery({
+  const style = useMediaQuery({
     mobile,
     tablet,
     desktop,

@@ -3,7 +3,7 @@
   import common from "./Header.common";
   import desktop from "./Header.desktop";
 
-  const { style } = useMediaQuery({
+  const style = useMediaQuery({
     desktop,
   });
 </script>
