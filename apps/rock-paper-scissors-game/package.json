@@ -10,17 +10,14 @@
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "dependencies": {
-    "@emotion/css": "^11.13.5",
     "styles": "workspace:*"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.4",
-    "prettier-plugin-svelte": "^3.3.3",
     "svelte": "^5.19.6",
     "svelte-check": "^4.1.4",
     "typescript": "~5.7.2",
-    "use-media-query": "workspace:*",
     "vite": "^6.1.0",
     "vite-plugin-move-dist-files": "workspace:*"
   },

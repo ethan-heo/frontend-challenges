@@ -8,7 +8,7 @@ on:
       - "packages/**/src/**"
 
 jobs:
-  CI:
+  build:
     runs-on: ubuntu-latest
 
     steps:
