@@ -4,14 +4,6 @@
 
 ### Usage
 
-#### 0. React, Svelte 지원
-
-```typescript
-import useMediaQuery "use-media-query/react";
-// or
-import useMediaQuery "use-media-query/svelte";
-```
-
 #### 1. Declaration 파일 추가
 
 ```typescript
@@ -67,4 +59,12 @@ const style = useMediaQuery({
 getMediaQuery("mobile");
 getMediaQuery("tablet");
 getMediaQuery("desktop");
+```
+
+### Support React, Svelte
+
+```typescript
+import useMediaQuery "use-media-query/react";
+// or
+import useMediaQuery "use-media-query/svelte";
 ```
