@@ -1,10 +1,10 @@
-import { writable } from "svelte/store";
+import { writable, type Writable } from "svelte/store";
 import type { DefaultMediaQuery } from "./media-query.types";
 import { onDestroy, onMount } from "svelte";
 import { getMediaQuery, MatchMediaHandler } from "./core";
 
 function useMediaQuery(styleMap: DefaultMediaQuery["args"] = {}) {
-  const style = writable<DefaultMediaQuery["returnType"]>();
+  const style = writable();
   const handlers: MatchMediaHandler[] = [];
 
   onMount(() => {
@@ -43,7 +43,7 @@ function useMediaQuery(styleMap: DefaultMediaQuery["args"] = {}) {
     });
   });
 
-  return style;
+  return style as Writable<DefaultMediaQuery["returnType"]>;
 }
 
 export default useMediaQuery;
