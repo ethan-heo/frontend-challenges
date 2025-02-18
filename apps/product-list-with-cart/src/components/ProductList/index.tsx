@@ -7,7 +7,7 @@ import useProductItemStore, {
   productItemStore,
 } from "../../hooks/useProductStore.hook";
 import { useEffect } from "react";
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 
 const ProductList: React.FC = () => {
   const style = useMediaQuery({

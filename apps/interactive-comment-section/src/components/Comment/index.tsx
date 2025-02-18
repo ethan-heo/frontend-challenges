@@ -3,7 +3,7 @@ import MinusIcon from "../../assets/images/icon-minus.svg?react";
 import DeleteIcon from "../../assets/images/icon-delete.svg?react";
 import EditIcon from "../../assets/images/icon-edit.svg?react";
 import ReplyIcon from "../../assets/images/icon-reply.svg?react";
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 import mobile from "./Comment.mobile.styles";
 import tablet from "./Comment.tablet.styles";
 import desktop from "./Comment.desktop.styles";

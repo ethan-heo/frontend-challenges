@@ -1,4 +1,4 @@
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 import mobile from "./CommentNesting.mobile.styles";
 import tablet from "./CommentNesting.tablet.styles";
 import desktop from "./CommentNesting.desktop.styles";

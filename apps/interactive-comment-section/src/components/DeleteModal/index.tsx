@@ -1,4 +1,4 @@
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 import common from "./DeleteModal.common.styles";
 import mobile from "./DeleteModal.mobile.styles";
 import tablet from "./DeleteModal.table.styles";
