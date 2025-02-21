@@ -2,6 +2,8 @@
   import useMediaQuery from "use-media-query/svelte";
   import common from "./Header.common";
   import desktop from "./Header.desktop";
+  import UseCase from "./UseCase.svelte";
+  import Score from "./Score.svelte";
 
   const style = useMediaQuery({
     desktop,
@@ -9,6 +11,6 @@
 </script>
 
 <div class={[common, style]}>
-  <div>A</div>
-  <div>B</div>
+  <UseCase />
+  <Score />
 </div>

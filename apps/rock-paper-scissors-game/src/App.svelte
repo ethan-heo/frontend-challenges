@@ -1,19 +1,22 @@
 <script lang="ts">
   import useMediaQuery from "use-media-query/svelte";
-  import mobile from "./App.mobile.styles";
-  import tablet from "./App.tablet.styles";
   import desktop from "./App.desktop.styles";
   import Header from "./components/Header/Header.svelte";
+  import Game from "./components/Game/Game.svelte";
+  import Rule from "./components/Rule.svelte";
+  import common from "./App.common.styles";
+  import RuleModal from "./components/RuleModal.svelte";
 
   const style = useMediaQuery({
-    mobile,
-    tablet,
     desktop,
   });
 </script>
 
-<main class={$style}>
+<main class={[common, $style]}>
   <Header />
+  <Game />
+  <Rule />
+  <RuleModal />
 </main>
 
 <style>
