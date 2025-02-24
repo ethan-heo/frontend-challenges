@@ -3,6 +3,7 @@
  * 1. 선택값 비교 O
  * 2. 컴퓨터 - 랜덤값 생성 O
  * 3. 스코어 출력 O
+ * 4. 상태값 - me(READY -> PICKED), other(PICKING -> PICKED)
  *
  * 액션
  * 1. 나 - 값 선택하기
@@ -32,6 +33,16 @@ export enum RESULT {
   TIED,
   WIN,
   DEFEAT,
+}
+
+export enum ME_STATUS {
+  READY = "ready",
+  PICKED = "picked",
+}
+
+export enum OTHER_STATUS {
+  PICKED = "picked",
+  PICKING = "picking",
 }
 
 const CASE_LENGTH = 5;
