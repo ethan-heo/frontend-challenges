@@ -1,29 +1,30 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import {
-  CASE,
+  GAME_USE_CASE,
   compare,
   defeat,
   pickByRandom,
-  RESULT,
+  GAME_RESULT,
   win,
+  findUseCaseIdx,
 } from "./game.module";
 
 describe(`GAME`, () => {
   beforeEach(() => {});
 
   it.each([
-    [CASE.SCISSORS, CASE.PAPER, RESULT.WIN],
-    [CASE.SCISSORS, CASE.LIZARD, RESULT.WIN],
-    [CASE.PAPER, CASE.ROCK, RESULT.WIN],
-    [CASE.PAPER, CASE.SPOCK, RESULT.WIN],
-    [CASE.ROCK, CASE.LIZARD, RESULT.WIN],
-    [CASE.ROCK, CASE.SCISSORS, RESULT.WIN],
-    [CASE.LIZARD, CASE.SPOCK, RESULT.WIN],
-    [CASE.LIZARD, CASE.PAPER, RESULT.WIN],
-    [CASE.SPOCK, CASE.SCISSORS, RESULT.WIN],
-    [CASE.SPOCK, CASE.ROCK, RESULT.WIN],
-  ])(`선택 비교 me(%o), other(%o)`, (me, other, result) => {
-    expect(compare(me, other)).toBe(result);
+    [GAME_USE_CASE.SCISSORS, GAME_USE_CASE.PAPER, GAME_RESULT.WIN],
+    [GAME_USE_CASE.SCISSORS, GAME_USE_CASE.LIZARD, GAME_RESULT.WIN],
+    [GAME_USE_CASE.PAPER, GAME_USE_CASE.ROCK, GAME_RESULT.WIN],
+    [GAME_USE_CASE.PAPER, GAME_USE_CASE.SPOCK, GAME_RESULT.WIN],
+    [GAME_USE_CASE.ROCK, GAME_USE_CASE.LIZARD, GAME_RESULT.WIN],
+    [GAME_USE_CASE.ROCK, GAME_USE_CASE.SCISSORS, GAME_RESULT.WIN],
+    [GAME_USE_CASE.LIZARD, GAME_USE_CASE.SPOCK, GAME_RESULT.WIN],
+    [GAME_USE_CASE.LIZARD, GAME_USE_CASE.PAPER, GAME_RESULT.WIN],
+    [GAME_USE_CASE.SPOCK, GAME_USE_CASE.SCISSORS, GAME_RESULT.WIN],
+    [GAME_USE_CASE.SPOCK, GAME_USE_CASE.ROCK, GAME_RESULT.WIN],
+  ])(`선택 비교 me(%o), other(%o)`, (me, other, gameResult) => {
+    expect(compare(me, other)).toBe(gameResult);
   });
 
   it(`이겼을 때`, () => {
@@ -59,18 +60,20 @@ describe(`GAME`, () => {
   });
 
   it(`랜덤 선택값 출력`, () => {
-    const CASES = [
-      CASE.SCISSORS,
-      CASE.PAPER,
-      CASE.ROCK,
-      CASE.LIZARD,
-      CASE.SPOCK,
+    const GAME_USE_CASES = [
+      GAME_USE_CASE.SCISSORS,
+      GAME_USE_CASE.PAPER,
+      GAME_USE_CASE.ROCK,
+      GAME_USE_CASE.LIZARD,
+      GAME_USE_CASE.SPOCK,
     ];
 
     for (let i = 0; i < 100; i++) {
       const picked = pickByRandom();
 
-      expect(CASES.some((_case) => _case === picked)).toBeTruthy();
+      expect(
+        GAME_USE_CASES.some((useCase) => findUseCaseIdx(useCase) === picked),
+      ).toBeTruthy();
     }
   });
 });
