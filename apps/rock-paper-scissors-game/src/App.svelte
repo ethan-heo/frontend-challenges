@@ -16,7 +16,7 @@
   <Header />
   <Game />
   <Rule />
-  <RuleModal />
+  <!-- <RuleModal /> -->
 </main>
 
 <style>

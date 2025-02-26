@@ -1,27 +1,28 @@
 <script>
+  import { GAME_USE_CASE } from "../../modules/game.module";
   import common from "./Game.common.styles";
   import GameButton from "./GameButton.svelte";
 
   const BUTTONS = [
     {
       imgSrc: "images/icon-scissors.svg",
-      label: "scissors",
+      useCase: GAME_USE_CASE.SCISSORS,
     },
     {
       imgSrc: "images/icon-paper.svg",
-      label: "paper",
+      useCase: GAME_USE_CASE.PAPER,
     },
     {
       imgSrc: "images/icon-rock.svg",
-      label: "rock",
+      useCase: GAME_USE_CASE.ROCK,
     },
     {
       imgSrc: "images/icon-lizard.svg",
-      label: "lizard",
+      useCase: GAME_USE_CASE.LIZARD,
     },
     {
       imgSrc: "images/icon-spock.svg",
-      label: "spock",
+      useCase: GAME_USE_CASE.SPOCK,
     },
   ];
 </script>
