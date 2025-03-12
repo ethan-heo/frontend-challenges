@@ -1,21 +1,27 @@
-<script>
-  // @ts-nocheck
-
+<script lang="ts">
   import GameButton from "./GameButton.svelte";
   import common from "./GamePlay.common.styles";
-  import { GAME_BUTTONS } from "./Game.constants";
+  import { GAME_STATUS } from "../../modules/game.module";
+  import gameModules from "../../modules/game.svelte";
+  import { onMount } from "svelte";
 
-  const picked = 0;
+  const { state } = gameModules;
+
+  onMount(() => {
+    window.setTimeout(() => {
+      gameModules.playWithHouse();
+    }, 2000);
+  });
 </script>
 
 <div class={common}>
   <div class="game-button__container">
-    <GameButton {...GAME_BUTTONS[0]} />
+    <GameButton {...state.playing.pickedMe} />
     <p class="game-button--text">YOU PICKED</p>
   </div>
   <div class="game-button__container">
-    {#if 0 === 1}
-      <GameButton {...GAME_BUTTONS[0]} />
+    {#if state.status === GAME_STATUS.DONE}
+      <GameButton {...state.playing.pickedOther} />
     {:else}
       <div class="game-button--empty"></div>
     {/if}
