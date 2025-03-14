@@ -14,9 +14,12 @@
   });
 </script>
 
-<div class={common}>
+<div class={common} data-show={true}>
   <div class="game-button__container">
-    <GameButton {...state.playing.pickedMe} />
+    <GameButton
+      {...state.playing.pickedMe}
+      wave={state.status === GAME_STATUS.DONE}
+    />
     <p class="game-button--text">YOU PICKED</p>
   </div>
   <div class="game-button__container">

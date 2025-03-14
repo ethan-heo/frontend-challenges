@@ -2,6 +2,7 @@ import { GAME_USE_CASE } from "./../../modules/game.module";
 import { css } from "@emotion/css";
 
 const common = css`
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -14,6 +15,32 @@ const common = css`
   img {
     width: 45%;
     height: auto;
+  }
+
+  &::before {
+    content: "";
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  &[data-wave="true"] {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200%;
+      height: 200%;
+      border-radius: 100%;
+      opacity: 1;
+      background: radial-gradient(
+        closest-side,
+        #ffffff40 33%,
+        #ffffff20 66%,
+        #ffffff10 100%
+      );
+    }
   }
 
   &[data-use-case="${GAME_USE_CASE.SCISSORS}"] {

@@ -1,11 +1,12 @@
 <script>
   import common from "./GameButton.common.styles";
-  const { imgSrc = "", useCase = "", pick = () => {} } = $props();
+  const { imgSrc = "", useCase = "", wave = false, pick = () => {} } = $props();
 </script>
 
 <button
   class={common}
   data-use-case={useCase}
+  data-wave={wave}
   onclick={() => {
     pick();
   }}

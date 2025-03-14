@@ -7,6 +7,13 @@ const common = css`
   justify-content: center;
   align-items: stretch;
   width: 100%;
+  min-height: 320px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &[data-show="true"] {
+    opacity: 1;
+  }
 
   .game-button {
     &__container {
