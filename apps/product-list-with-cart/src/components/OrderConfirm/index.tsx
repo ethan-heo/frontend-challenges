@@ -1,4 +1,4 @@
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 import useCartStore from "../../hooks/useCartStore.hook";
 import common from "./OrderConfirm.common.styles";
 import desktop from "./OrderConfirm.desktop.styles";

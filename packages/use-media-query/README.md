@@ -1,12 +1,10 @@
 ## use-media-query
 
-모듈 시스템에서 media query를 사용할 수 있도록 변경
+모듈 시스템에서 반응형 스타일을 정의할 수 있도록 도와주는 도구
 
 ### Usage
 
 #### 1. Declaration 파일 추가
-
-사용자 정의 플랫폼, 반환값, Hook args
 
 ```typescript
 import { SerializedStyles } from "@emotion/react";
@@ -25,9 +23,13 @@ declare module "use-media-query" {
 }
 ```
 
+- args: 훅의 인자 타입 정의
+- platform: 사용할 플랫폼 정의
+- returnType: 훅의 반환값 타입 정의
+
 #### 2. media query 추가
 
-플랫폼, 플랫폼별 media query를 등록하는 과정
+플랫폼별 media query를 등록하는 과정. matchMedia의 사이즈에 사용된다.
 
 ```typescript
 import { registerMediaQuery } from "use-media-query";
@@ -57,4 +59,12 @@ const style = useMediaQuery({
 getMediaQuery("mobile");
 getMediaQuery("tablet");
 getMediaQuery("desktop");
+```
+
+### Support React, Svelte
+
+```typescript
+import useMediaQuery "use-media-query/react";
+// or
+import useMediaQuery "use-media-query/svelte";
 ```

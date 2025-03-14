@@ -1,4 +1,4 @@
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 import common from "./CommentAdd.common.styles";
 import mobile from "./CommentAdd.mobile.styles";
 import tablet from "./CommentAdd.tablet.styles";

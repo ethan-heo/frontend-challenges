@@ -6,7 +6,7 @@ import desktop from "./OrderConfirmContent.desktop.styles";
 import OrderConfirmList from "./OrderConfirmList";
 import OrderConfirmTotalPrice from "./OrderConfirmTotalPrice";
 import OrderConfirmButton from "./OrderConfirmButton";
-import useMediaQuery from "use-media-query";
+import useMediaQuery from "use-media-query/react";
 
 const OrderConfirmContent: React.FC = () => {
   const styles = useMediaQuery({

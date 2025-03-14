@@ -1,78 +1,51 @@
-# Frontend Mentor - Conference ticket generator solution
+## 프로젝트 개요
 
-This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+- 이름: conference-ticket-generator
+- 목적: 유저 정보를 바탕으로 컨퍼런스 티켓을 생성하는 웹 서비스 개발
+- 작업 기간: 2일
+- 목표:
+  - [x] 시맨틱 태그 사용
+  - [x] 반응형 사이트 제작 (mobile, desktop)
+  - 폼 유효성 검사
+    - [x] 업로드 이미지 사이즈 제한, 이미지 유형 제한
+    - [x] 필수 요소 확인
+    - [x] 이메일 형식 확인
+  - [x] Active 상태 css 스타일 정의
+- 사용자: 본인
+- 핵심 기능 및 주요 특징
+  - 폼 유효성 검사
+  - 유저 정보 관리 (local storage)
+  - 입력된 유저 정보를 기반으로 티켓 생성
+  - link 태그의 media 속성을 활용한 플랫폼별 CSS 파일 분리
+  - BEM 방법론 사용
 
-## Table of contents
+## 기술 스택
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- 주요 기술: HTML5, CSS3, TypeScript
+- 번들러: Vite
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## 프로젝트 구조
 
-## Overview
+```bash
+/dist      # 빌드된 파일
+/public    # 정적 리소스 (favicon, robots.txt 등)
+/src       # 개발 코드
+  ├── assets/     # 이미지, 아이콘, 폰트 등 정적 파일
+  ├── scripts/    # 기능별 스크립트 파일
+  ├── styles/     # 페이지별 스타일 디렉토리
+ticket.html
+index.html
+```
 
-### The challenge
+## 개발 환경
 
-Users should be able to:
+- Vanilla 프론트엔드 환경
+- 실행
+  ```bash
+  pnpm --filter=conference-ticket-generator dev
+  ```
 
-- Complete the form with their details
-- Receive form validation messages if:
-  - Any field is missed
-  - The email address is not formatted correctly
-  - The avatar upload is too big or the wrong image format
-- Complete the form only using their keyboard
-- Have inputs, form field hints, and error messages announced on their screen reader
-- See the generated conference ticket when they successfully submit the form
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+## UI/UX 디자인
 
-### Screenshot
-
-### Links
-
-- Solution URL: [Link](https://github.com/ethan-heo/frontend-challenges/tree/master/apps/conference-ticket-generator)
-- Live Site URL: [Link](https://ethan-heo.github.io/frontend-challenges/projects/conference-ticket-generator/)
-
-## My process
-
-1. layout markup
-2. mobile styling
-3. desktop styling
-4. implement avatar functionality
-5. implementing form validation
-6. deployment
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Mobile-first workflow
-
-### What I learned
-
-1. How to use the max() function
-2. proper use of ARIA
-3. label tag does not allow keyboard events to trigger input
-4. how to initialize input[type=“file”] value
-5. how to use multiple background-images
-
-### Continued development
-
-### Useful resources
-
-## Author
-
-- Website - [ethan-heo](https://ethan-heo.github.io/frontend-challenges/)
-- Frontend Mentor - [ethan-heo](https://www.frontendmentor.io/profile/ethan-heo)
-
-## Acknowledgments
+- FrontendMentor 에서 제공한 [스타일 가이드](./guide/style-guide.md) 사용
+- 반응형 디자인 적용 (Mobile, Desktop)

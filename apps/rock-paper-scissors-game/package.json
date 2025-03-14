@@ -1,0 +1,39 @@
+{
+  "name": "rock-paper-scissors-game",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "lodash": "^4.17.21",
+    "styles": "workspace:*",
+    "use-media-query": "workspace:*"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/lodash": "^4.17.15",
+    "prettier-plugin-svelte": "^3.3.3",
+    "svelte": "^5.19.6",
+    "svelte-check": "^4.1.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0",
+    "vite-plugin-move-dist-files": "workspace:*"
+  },
+  "challenge": {
+    "name": "rock-paper-scissors-game",
+    "description": "This challenge will test your HTML, CSS and JavaScript skills. There's even a Rock, Paper, Scissors, Lizard, Spock version if you really want to challenge yourself.",
+    "source": "FrontendMentor",
+    "sourceLink": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
+    "skills": [
+      "Svelte",
+      "TypeScript"
+    ]
+  }
+}
