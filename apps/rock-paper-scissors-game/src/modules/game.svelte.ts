@@ -61,7 +61,7 @@ const gameModules = {
         state.score++;
         break;
       case GAME_PLAYING_STATUS.DEFEAT:
-        state.score = state.score > 1 ? state.score-- : state.score;
+        state.score = state.score > 1 ? state.score - 1 : state.score;
         break;
     }
 
