@@ -1,5 +1,6 @@
 <script>
   import common from "./RuleModal.common.styles";
+  const { close = () => {} } = $props();
 </script>
 
 <div class={common}>
@@ -9,7 +10,7 @@
     src="images/image-rules-bonus.svg"
     alt="Rules for the game"
   />
-  <button aria-label="close modal">
+  <button aria-label="close modal" onclick={() => close()}>
     <img src="images/icon-close.svg" alt="close modal" />
   </button>
 </div>
